@@ -1,0 +1,7 @@
+location_id,name,location_type,description
+1,Legon Hall,HOSTEL,Student residence
+2,JQB,LECTURE_HALL,Lecture and departmental area
+3,Computer Laboratory,LABORATORY,Campus computer laboratory
+4,Shuttle Stop A,SHUTTLE_STOP,Campus shuttle pickup point
+5,Maintenance Office,MAINTENANCE_OFFICE,Facilities and maintenance depot
+6,Science Workshop,WORKSHOP,Workshop/lab support area
