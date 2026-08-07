@@ -1,0 +1,56 @@
+locationId,name,area,type,latitude,longitude
+1,Legon Campus Main Gate,Legon,gate,5.6572,-0.1873
+2,Commonwealth Hall,Legon,hall,5.656,-0.186
+3,Great Hall,Legon,building,5.654,-0.184
+4,Balme Library,Legon,building,5.652,-0.185
+5,N Block,Legon,building,5.651,-0.183
+6,Science Block,Legon,building,5.649,-0.1845
+7,Central Cafeteria,Legon,facility,5.6505,-0.1865
+8,Volta Hall,Legon,hall,5.653,-0.188
+9,Mensah Sarbah Hall,Legon,hall,5.6515,-0.189
+10,Akuafo Hall,Legon,hall,5.6525,-0.19
+11,International Programmes Office,Legon,office,5.6545,-0.191
+12,School of Pharmacy,Legon,building,5.65,-0.192
+13,Engineering Block,Legon,building,5.648,-0.1935
+14,Claver Robinson Hostel,Legon,hostel,5.647,-0.1905
+15,Alexander Kwapong Hostel,Legon,hostel,5.6495,-0.195
+16,Jean Nelson Hall,Legon,hall,5.651,-0.197
+17,Legon Hall,Legon,hall,5.6535,-0.199
+18,Presbyterian Hall,Legon,hall,5.6555,-0.2
+19,Mizpah Hostel,Legon,hostel,5.6505,-0.201
+20,Bani Hostel,Legon,hostel,5.649,-0.2025
+21,Night Market,Legon,facility,5.652,-0.1885
+22,Legacy Hall,Legon,hall,5.654,-0.1905
+23,Amafi Hostel,Legon,hostel,5.6515,-0.1955
+24,Sarbah Park,Legon,facility,5.653,-0.196
+25,Fire Station,Legon,facility,5.655,-0.1875
+26,Legon Stadium,Legon,facility,5.6475,-0.1865
+27,Basketball Court,Legon,facility,5.649,-0.188
+28,Botanical Garden,Legon,facility,5.6455,-0.185
+29,Veterinary School,Legon,building,5.645,-0.19
+30,Medical School,Legon,building,5.6465,-0.1925
+31,Central Administration,Legon,admin,5.653,-0.185
+32,School of Engineering,Legon,building,5.6485,-0.194
+33,School of Physical Sciences,Legon,building,5.6495,-0.1825
+34,School of Biological Sciences,Legon,building,5.65,-0.18
+35,School of Social Sciences,Legon,building,5.6515,-0.1815
+36,School of Arts,Legon,building,5.653,-0.183
+37,School of Business,Legon,building,5.6545,-0.1845
+38,Faculty of Law,Legon,building,5.6555,-0.186
+39,Faculty of Education,Legon,building,5.657,-0.188
+40,ISSER,Legon,building,5.6525,-0.192
+41,Noguchi Memorial Institute,Legon,building,5.646,-0.191
+42,WACCI,Legon,building,5.6455,-0.193
+43,RIPS,Legon,building,5.647,-0.1945
+44,UGBS,Legon,building,5.654,-0.1955
+45,Graduate School,Legon,building,5.655,-0.197
+46,Legon Airport Road,Legon,facility,5.6565,-0.1895
+47,Ring Road West,Legon,facility,5.6535,-0.198
+48,Gimbidi Road,Legon,facility,5.6505,-0.1995
+49,Admin Gate,Legon,gate,5.6535,-0.1845
+50,Night Gate,Legon,gate,5.65,-0.196
+51,South Gate,Legon,gate,5.6485,-0.1985
+52,Shuttle Stop A,Legon,shuttle_stop,5.6555,-0.187
+53,Shuttle Stop B,Legon,shuttle_stop,5.65,-0.1845
+54,Shuttle Stop C,Legon,shuttle_stop,5.648,-0.19
+55,Maintenance Depot,Legon,maintenance_office,5.646,-0.186

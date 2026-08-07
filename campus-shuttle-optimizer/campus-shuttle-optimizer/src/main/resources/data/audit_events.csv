@@ -1,0 +1,26 @@
+eventId,action,details,timestamp
+1,UPDATE,Record modified,2024-02-12 11:16
+2,DELETE,Record removed,2024-02-12 17:53
+3,LOGIN,User session started,2024-02-20 13:23
+4,LOGIN,User session started,2024-02-17 15:38
+5,DELETE,Record removed,2024-02-10 17:42
+6,UNDO,Last action reversed,2024-02-10 12:52
+7,EXPORT,Data exported to CSV,2024-02-20 16:02
+8,UPDATE,Record modified,2024-02-14 17:12
+9,LOGIN,User session started,2024-02-12 12:17
+10,EXPORT,Data exported to CSV,2024-02-18 12:00
+11,EXPORT,Data exported to CSV,2024-02-20 09:30
+12,UPDATE,Record modified,2024-02-17 08:06
+13,UPDATE,Record modified,2024-02-17 12:11
+14,UNDO,Last action reversed,2024-02-16 16:19
+15,INSERT,New record added,2024-02-14 08:55
+16,LOGIN,User session started,2024-02-19 11:16
+17,UNDO,Last action reversed,2024-02-17 14:28
+18,DELETE,Record removed,2024-02-11 16:55
+19,UPDATE,Record modified,2024-02-14 11:00
+20,UPDATE,Record modified,2024-02-16 13:06
+21,EXPORT,Data exported to CSV,2024-02-13 08:36
+22,UPDATE,Record modified,2024-02-10 15:47
+23,UNDO,Last action reversed,2024-02-18 11:47
+24,INSERT,New record added,2024-02-14 14:30
+25,UPDATE,Record modified,2024-02-12 15:30

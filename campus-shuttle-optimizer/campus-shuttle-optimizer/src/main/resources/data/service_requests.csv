@@ -1,0 +1,321 @@
+requestId,source,destination,category,urgency,timeSubmitted,deadline,status
+1,N Block,Science Block,maintenance_IT,3,2024-01-25 07:58,2024-01-25 10:35,cancelled
+2,Legon Hall,Maintenance Depot,maintenance_plumbing,3,2024-02-08 08:47,2024-02-08 10:25,pending
+3,Mensah Sarbah Hall,N Block,maintenance_structural,3,2024-02-04 15:18,2024-02-04 16:53,cancelled
+4,Jean Nelson Hall,Science Block,maintenance_IT,2,2024-01-25 08:50,2024-01-25 10:35,pending
+5,Jean Nelson Hall,Maintenance Depot,maintenance_structural,5,2024-01-30 15:54,2024-01-30 17:13,completed
+6,Claver Robinson Hostel,School of Engineering,maintenance_electrical,2,2024-01-18 18:17,2024-01-18 21:53,pending
+7,Commonwealth Hall,Engineering Block,maintenance_structural,1,2024-02-04 07:17,2024-02-04 09:56,pending
+8,Mensah Sarbah Hall,School of Engineering,maintenance_IT,1,2024-01-24 17:07,2024-01-24 20:52,assigned
+9,Balme Library,Maintenance Depot,maintenance_plumbing,1,2024-02-08 18:43,2024-02-08 20:47,assigned
+10,Night Market,N Block,maintenance_plumbing,2,2024-02-12 10:55,2024-02-12 13:22,pending
+11,Mizpah Hostel,Maintenance Depot,maintenance_IT,1,2024-02-01 12:20,2024-02-01 13:46,pending
+12,Bani Hostel,Maintenance Depot,maintenance_structural,4,2024-01-19 16:17,2024-01-19 18:50,completed
+13,Amafi Hostel,Night Market,shuttle_ride,2,2024-02-01 18:53,2024-02-01 20:24,completed
+14,Amafi Hostel,Maintenance Depot,maintenance_structural,1,2024-02-03 07:36,2024-02-03 11:17,completed
+15,Commonwealth Hall,Engineering Block,maintenance_structural,1,2024-02-04 14:38,2024-02-04 17:14,completed
+16,Claver Robinson Hostel,Science Block,maintenance_IT,4,2024-02-02 12:15,2024-02-02 14:21,pending
+17,Science Block,N Block,maintenance_structural,2,2024-01-20 17:15,2024-01-20 20:30,pending
+18,Presbyterian Hall,Science Block,maintenance_IT,3,2024-01-23 19:14,2024-01-23 20:13,assigned
+19,Legon Campus Main Gate,Maintenance Depot,maintenance_structural,5,2024-01-21 12:52,2024-01-21 15:08,pending
+20,Night Market,Engineering Block,maintenance_IT,2,2024-02-05 10:20,2024-02-05 13:30,pending
+21,Amafi Hostel,N Block,maintenance_plumbing,4,2024-01-22 11:39,2024-01-22 15:02,completed
+22,Engineering Block,Night Market,shuttle_ride,1,2024-02-05 14:17,2024-02-05 16:00,cancelled
+23,Engineering Block,Engineering Block,maintenance_electrical,3,2024-01-22 16:46,2024-01-22 19:47,completed
+24,Commonwealth Hall,Maintenance Depot,maintenance_electrical,1,2024-01-19 17:03,2024-01-19 19:48,completed
+25,Balme Library,Great Hall,shuttle_ride,1,2024-01-28 18:10,2024-01-28 19:00,pending
+26,Legacy Hall,N Block,maintenance_plumbing,4,2024-01-24 17:11,2024-01-24 20:06,assigned
+27,Balme Library,N Block,maintenance_electrical,5,2024-01-28 12:55,2024-01-28 15:49,assigned
+28,Volta Hall,Night Market,shuttle_ride,4,2024-01-16 11:27,2024-01-16 15:22,completed
+29,Commonwealth Hall,School of Engineering,maintenance_plumbing,4,2024-01-20 13:33,2024-01-20 15:58,pending
+30,Central Cafeteria,Maintenance Depot,maintenance_plumbing,2,2024-01-18 13:56,2024-01-18 14:55,cancelled
+31,Night Market,Engineering Block,maintenance_electrical,2,2024-01-26 11:17,2024-01-26 13:39,completed
+32,Central Cafeteria,Engineering Block,maintenance_structural,1,2024-01-23 09:35,2024-01-23 12:39,completed
+33,Commonwealth Hall,Maintenance Depot,maintenance_electrical,3,2024-01-26 09:58,2024-01-26 10:57,cancelled
+34,Balme Library,Maintenance Depot,maintenance_electrical,2,2024-01-27 12:03,2024-01-27 12:41,cancelled
+35,Legacy Hall,Maintenance Depot,maintenance_plumbing,5,2024-02-11 10:43,2024-02-11 13:12,completed
+36,Central Cafeteria,Maintenance Depot,maintenance_electrical,4,2024-02-11 17:43,2024-02-11 20:27,cancelled
+37,Bani Hostel,Commonwealth Hall,shuttle_ride,1,2024-02-01 07:57,2024-02-01 11:39,cancelled
+38,Volta Hall,Maintenance Depot,maintenance_electrical,2,2024-02-14 08:41,2024-02-14 12:01,assigned
+39,School of Business,N Block,maintenance_structural,2,2024-02-08 16:25,2024-02-08 19:45,pending
+40,School of Pharmacy,Maintenance Depot,maintenance_plumbing,3,2024-02-01 09:24,2024-02-01 11:47,completed
+41,Commonwealth Hall,Bani Hostel,shuttle_ride,4,2024-02-10 18:24,2024-02-10 20:46,completed
+42,Bani Hostel,Maintenance Depot,maintenance_electrical,5,2024-02-04 15:16,2024-02-04 17:58,completed
+43,Commonwealth Hall,Engineering Block,maintenance_electrical,1,2024-01-15 11:43,2024-01-15 13:22,pending
+44,Engineering Block,School of Engineering,maintenance_electrical,2,2024-01-29 20:59,2024-01-29 22:58,completed
+45,Akuafo Hall,Engineering Block,maintenance_structural,5,2024-02-07 16:08,2024-02-07 17:30,completed
+46,Central Cafeteria,School of Engineering,maintenance_plumbing,4,2024-02-10 11:04,2024-02-10 11:45,completed
+47,Legon Hall,Great Hall,shuttle_ride,3,2024-01-24 11:38,2024-01-24 12:12,completed
+48,Akuafo Hall,Engineering Block,maintenance_IT,3,2024-02-03 09:11,2024-02-03 10:45,pending
+49,Central Cafeteria,Maintenance Depot,maintenance_electrical,3,2024-02-04 18:49,2024-02-04 19:53,assigned
+50,Great Hall,Maintenance Depot,maintenance_structural,3,2024-02-08 20:55,2024-02-08 22:48,completed
+51,Amafi Hostel,School of Engineering,maintenance_plumbing,3,2024-02-05 13:05,2024-02-05 15:18,cancelled
+52,Legon Hall,Engineering Block,maintenance_plumbing,1,2024-01-26 17:41,2024-01-26 18:52,completed
+53,Jean Nelson Hall,Engineering Block,maintenance_IT,2,2024-02-07 07:41,2024-02-07 10:21,assigned
+54,Mizpah Hostel,N Block,maintenance_plumbing,5,2024-01-24 17:44,2024-01-24 18:35,completed
+55,Mizpah Hostel,Maintenance Depot,maintenance_plumbing,2,2024-01-19 07:45,2024-01-19 11:23,pending
+56,Alexander Kwapong Hostel,Engineering Block,maintenance_plumbing,4,2024-02-13 07:52,2024-02-13 11:52,pending
+57,School of Business,School of Engineering,maintenance_structural,2,2024-01-15 10:52,2024-01-15 12:59,assigned
+58,Shuttle Stop A,Maintenance Depot,maintenance_structural,4,2024-02-10 11:03,2024-02-10 15:02,pending
+59,Great Hall,Amafi Hostel,shuttle_ride,5,2024-01-15 15:03,2024-01-15 17:34,completed
+60,Mizpah Hostel,N Block,maintenance_structural,5,2024-01-18 16:33,2024-01-18 20:31,completed
+61,Shuttle Stop B,Science Block,maintenance_plumbing,3,2024-01-30 07:23,2024-01-30 09:40,pending
+62,Great Hall,Science Block,maintenance_electrical,3,2024-01-27 09:38,2024-01-27 13:12,cancelled
+63,Mizpah Hostel,Maintenance Depot,maintenance_plumbing,2,2024-01-31 18:48,2024-01-31 22:47,pending
+64,Shuttle Stop A,Maintenance Depot,maintenance_IT,3,2024-02-13 07:23,2024-02-13 10:05,assigned
+65,Presbyterian Hall,Maintenance Depot,maintenance_structural,4,2024-01-16 07:40,2024-01-16 09:42,pending
+66,Balme Library,Great Hall,shuttle_ride,4,2024-01-21 13:49,2024-01-21 17:07,assigned
+67,Balme Library,Maintenance Depot,maintenance_structural,1,2024-02-11 11:54,2024-02-11 13:33,pending
+68,Claver Robinson Hostel,School of Engineering,maintenance_IT,4,2024-02-03 09:21,2024-02-03 13:17,cancelled
+69,Presbyterian Hall,School of Engineering,maintenance_structural,3,2024-02-08 08:38,2024-02-08 11:29,assigned
+70,Mensah Sarbah Hall,Maintenance Depot,maintenance_IT,2,2024-02-12 08:04,2024-02-12 09:16,completed
+71,Mensah Sarbah Hall,School of Engineering,maintenance_electrical,1,2024-01-19 14:46,2024-01-19 17:28,pending
+72,Volta Hall,Maintenance Depot,maintenance_structural,4,2024-02-10 14:47,2024-02-10 17:53,pending
+73,Akuafo Hall,Science Block,maintenance_IT,4,2024-01-28 08:06,2024-01-28 09:09,pending
+74,Alexander Kwapong Hostel,Mizpah Hostel,shuttle_ride,3,2024-01-17 13:38,2024-01-17 16:26,cancelled
+75,Bani Hostel,Maintenance Depot,maintenance_plumbing,5,2024-02-09 18:54,2024-02-09 19:43,cancelled
+76,Claver Robinson Hostel,Maintenance Depot,maintenance_plumbing,2,2024-01-21 10:26,2024-01-21 13:45,pending
+77,Jean Nelson Hall,Engineering Block,maintenance_plumbing,1,2024-02-04 10:12,2024-02-04 12:24,pending
+78,Legacy Hall,Maintenance Depot,maintenance_plumbing,5,2024-01-19 16:58,2024-01-19 19:44,assigned
+79,Jean Nelson Hall,School of Engineering,maintenance_IT,4,2024-02-05 17:19,2024-02-05 18:21,pending
+80,Mizpah Hostel,Science Block,maintenance_electrical,1,2024-01-19 15:34,2024-01-19 16:44,completed
+81,Akuafo Hall,N Block,maintenance_structural,2,2024-01-23 09:34,2024-01-23 12:11,completed
+82,School of Engineering,N Block,maintenance_plumbing,3,2024-02-14 09:43,2024-02-14 12:27,completed
+83,Legon Campus Main Gate,Maintenance Depot,maintenance_plumbing,4,2024-01-30 10:34,2024-01-30 11:14,pending
+84,N Block,N Block,maintenance_plumbing,5,2024-01-26 09:43,2024-01-26 11:34,cancelled
+85,Alexander Kwapong Hostel,Science Block,maintenance_structural,2,2024-02-11 18:23,2024-02-11 21:07,completed
+86,N Block,Engineering Block,maintenance_structural,1,2024-01-31 13:43,2024-01-31 14:27,pending
+87,Amafi Hostel,Science Block,maintenance_plumbing,2,2024-01-18 18:05,2024-01-18 20:26,pending
+88,Legacy Hall,Engineering Block,maintenance_IT,5,2024-02-04 11:24,2024-02-04 12:22,cancelled
+89,Legon Campus Main Gate,Maintenance Depot,maintenance_plumbing,5,2024-02-03 09:12,2024-02-03 10:44,pending
+90,Akuafo Hall,Maintenance Depot,maintenance_structural,2,2024-02-14 13:49,2024-02-14 14:49,assigned
+91,Mizpah Hostel,Science Block,maintenance_IT,3,2024-02-10 17:54,2024-02-10 20:49,pending
+92,Akuafo Hall,Engineering Block,maintenance_electrical,3,2024-02-05 12:08,2024-02-05 13:52,completed
+93,Balme Library,School of Business,shuttle_ride,3,2024-02-10 20:55,2024-02-10 23:10,pending
+94,Jean Nelson Hall,Maintenance Depot,maintenance_IT,5,2024-02-03 16:44,2024-02-03 17:15,pending
+95,Balme Library,Maintenance Depot,maintenance_IT,5,2024-02-12 11:57,2024-02-12 15:22,assigned
+96,School of Pharmacy,Maintenance Depot,maintenance_IT,4,2024-02-01 07:48,2024-02-01 08:23,assigned
+97,Volta Hall,N Block,maintenance_electrical,4,2024-02-01 13:44,2024-02-01 16:15,completed
+98,Commonwealth Hall,N Block,maintenance_plumbing,5,2024-02-09 20:20,2024-02-09 23:42,completed
+99,Engineering Block,N Block,maintenance_plumbing,5,2024-02-13 16:45,2024-02-13 19:22,cancelled
+100,Bani Hostel,Maintenance Depot,maintenance_IT,1,2024-02-09 13:24,2024-02-09 17:15,assigned
+101,Great Hall,Jean Nelson Hall,shuttle_ride,3,2024-01-21 12:44,2024-01-21 14:30,pending
+102,Volta Hall,Shuttle Stop B,shuttle_ride,4,2024-02-04 14:01,2024-02-04 16:16,completed
+103,Bani Hostel,N Block,maintenance_plumbing,1,2024-02-03 14:53,2024-02-03 17:11,pending
+104,Science Block,Maintenance Depot,maintenance_IT,5,2024-01-20 18:45,2024-01-20 20:50,pending
+105,Shuttle Stop B,Commonwealth Hall,shuttle_ride,3,2024-01-27 20:50,2024-01-28 00:41,pending
+106,Legacy Hall,Legon Campus Main Gate,shuttle_ride,5,2024-02-06 11:59,2024-02-06 14:04,completed
+107,Shuttle Stop A,Legon Hall,shuttle_ride,2,2024-02-14 11:23,2024-02-14 12:50,completed
+108,Commonwealth Hall,Maintenance Depot,maintenance_plumbing,4,2024-01-16 19:59,2024-01-16 23:59,pending
+109,Night Market,Engineering Block,maintenance_electrical,4,2024-02-10 07:07,2024-02-10 10:19,assigned
+110,School of Business,Mensah Sarbah Hall,shuttle_ride,5,2024-01-15 18:28,2024-01-15 22:13,completed
+111,Legon Campus Main Gate,Night Market,shuttle_ride,2,2024-01-17 20:24,2024-01-17 22:24,pending
+112,Jean Nelson Hall,Maintenance Depot,maintenance_IT,2,2024-02-03 14:29,2024-02-03 18:05,pending
+113,N Block,Maintenance Depot,maintenance_structural,2,2024-01-24 09:18,2024-01-24 12:48,completed
+114,Presbyterian Hall,Engineering Block,maintenance_structural,2,2024-01-20 17:10,2024-01-20 19:21,pending
+115,Jean Nelson Hall,Science Block,maintenance_IT,2,2024-02-08 09:53,2024-02-08 13:44,assigned
+116,Alexander Kwapong Hostel,Maintenance Depot,maintenance_structural,3,2024-02-14 07:43,2024-02-14 10:32,completed
+117,Legon Hall,Science Block,maintenance_structural,1,2024-01-20 18:39,2024-01-20 20:18,pending
+118,Night Market,Maintenance Depot,maintenance_IT,4,2024-02-12 14:30,2024-02-12 16:46,completed
+119,Night Market,Maintenance Depot,maintenance_IT,4,2024-02-09 08:09,2024-02-09 10:56,assigned
+120,Central Cafeteria,Science Block,maintenance_plumbing,2,2024-02-12 15:50,2024-02-12 16:42,assigned
+121,Balme Library,School of Engineering,maintenance_IT,1,2024-01-28 16:17,2024-01-28 17:03,assigned
+122,Central Cafeteria,Maintenance Depot,maintenance_electrical,5,2024-02-10 10:13,2024-02-10 11:56,cancelled
+123,Mizpah Hostel,Maintenance Depot,maintenance_plumbing,3,2024-02-02 18:34,2024-02-02 20:19,completed
+124,Balme Library,Maintenance Depot,maintenance_plumbing,3,2024-02-08 16:10,2024-02-08 19:39,pending
+125,Jean Nelson Hall,Maintenance Depot,maintenance_plumbing,1,2024-01-26 17:32,2024-01-26 18:53,cancelled
+126,Great Hall,Maintenance Depot,maintenance_electrical,4,2024-01-31 17:15,2024-01-31 19:39,completed
+127,Engineering Block,Maintenance Depot,maintenance_structural,4,2024-02-11 16:35,2024-02-11 17:37,assigned
+128,Commonwealth Hall,Engineering Block,maintenance_structural,3,2024-01-21 20:58,2024-01-22 00:43,cancelled
+129,Legacy Hall,Science Block,maintenance_IT,2,2024-01-26 13:01,2024-01-26 14:08,pending
+130,Balme Library,School of Engineering,maintenance_electrical,4,2024-02-06 17:13,2024-02-06 21:12,completed
+131,Shuttle Stop B,Maintenance Depot,maintenance_electrical,3,2024-01-19 15:18,2024-01-19 17:23,cancelled
+132,Bani Hostel,Central Cafeteria,shuttle_ride,3,2024-02-02 10:18,2024-02-02 11:26,assigned
+133,Mensah Sarbah Hall,Engineering Block,maintenance_IT,3,2024-01-28 20:49,2024-01-28 22:31,completed
+134,Mensah Sarbah Hall,N Block,maintenance_plumbing,2,2024-02-05 18:12,2024-02-05 20:35,pending
+135,Presbyterian Hall,Shuttle Stop A,shuttle_ride,4,2024-02-12 18:06,2024-02-12 21:08,completed
+136,Engineering Block,Maintenance Depot,maintenance_IT,3,2024-01-26 13:45,2024-01-26 17:16,pending
+137,Great Hall,N Block,maintenance_electrical,2,2024-01-18 16:05,2024-01-18 17:56,pending
+138,Science Block,N Block,maintenance_structural,4,2024-01-31 15:26,2024-01-31 16:40,cancelled
+139,School of Business,Science Block,maintenance_structural,5,2024-01-25 08:06,2024-01-25 11:19,pending
+140,Volta Hall,Engineering Block,maintenance_plumbing,1,2024-02-03 12:13,2024-02-03 15:11,completed
+141,Great Hall,Maintenance Depot,maintenance_structural,4,2024-01-25 16:50,2024-01-25 20:03,assigned
+142,Mensah Sarbah Hall,Maintenance Depot,maintenance_structural,2,2024-02-04 09:44,2024-02-04 13:17,completed
+143,Commonwealth Hall,N Block,maintenance_IT,5,2024-01-30 17:03,2024-01-30 19:18,completed
+144,Legacy Hall,N Block,maintenance_structural,5,2024-02-03 08:51,2024-02-03 10:27,pending
+145,Volta Hall,Science Block,maintenance_plumbing,3,2024-01-29 18:08,2024-01-29 20:54,pending
+146,Legacy Hall,School of Engineering,maintenance_plumbing,2,2024-02-14 07:52,2024-02-14 11:51,pending
+147,Presbyterian Hall,N Block,maintenance_plumbing,5,2024-02-04 18:45,2024-02-04 21:04,cancelled
+148,Jean Nelson Hall,Maintenance Depot,maintenance_structural,4,2024-02-06 16:16,2024-02-06 17:42,pending
+149,Alexander Kwapong Hostel,Science Block,maintenance_plumbing,3,2024-02-10 08:18,2024-02-10 10:44,pending
+150,Legacy Hall,N Block,maintenance_electrical,5,2024-02-07 14:27,2024-02-07 15:06,completed
+151,Central Cafeteria,Engineering Block,shuttle_ride,2,2024-01-27 13:18,2024-01-27 16:01,completed
+152,Jean Nelson Hall,Legacy Hall,shuttle_ride,4,2024-02-10 16:44,2024-02-10 18:23,pending
+153,Jean Nelson Hall,Legon Campus Main Gate,shuttle_ride,5,2024-01-29 17:37,2024-01-29 20:35,completed
+154,Central Cafeteria,Maintenance Depot,maintenance_electrical,5,2024-02-12 17:57,2024-02-12 20:33,assigned
+155,Night Market,Engineering Block,maintenance_electrical,1,2024-02-12 18:10,2024-02-12 20:39,assigned
+156,School of Engineering,Science Block,maintenance_electrical,3,2024-01-16 20:24,2024-01-16 22:00,pending
+157,Presbyterian Hall,Engineering Block,maintenance_plumbing,1,2024-02-08 07:20,2024-02-08 09:23,pending
+158,Jean Nelson Hall,Maintenance Depot,maintenance_IT,3,2024-02-01 08:48,2024-02-01 10:12,pending
+159,Amafi Hostel,School of Engineering,maintenance_structural,2,2024-02-07 08:12,2024-02-07 11:51,cancelled
+160,Presbyterian Hall,Central Cafeteria,shuttle_ride,1,2024-01-24 09:16,2024-01-24 11:44,assigned
+161,Mizpah Hostel,Science Block,maintenance_structural,5,2024-02-01 18:18,2024-02-01 20:14,cancelled
+162,Legacy Hall,Legon Campus Main Gate,shuttle_ride,4,2024-01-18 20:40,2024-01-18 22:24,pending
+163,Mizpah Hostel,N Block,maintenance_structural,4,2024-02-02 20:16,2024-02-02 22:26,completed
+164,Central Cafeteria,Maintenance Depot,maintenance_IT,4,2024-02-14 12:34,2024-02-14 16:33,pending
+165,Legon Campus Main Gate,Engineering Block,maintenance_IT,1,2024-01-27 18:18,2024-01-27 22:14,assigned
+166,Claver Robinson Hostel,Science Block,maintenance_structural,3,2024-02-07 13:57,2024-02-07 16:46,pending
+167,Alexander Kwapong Hostel,Maintenance Depot,maintenance_electrical,5,2024-02-08 15:34,2024-02-08 16:10,assigned
+168,Legon Hall,Maintenance Depot,maintenance_plumbing,3,2024-01-29 07:32,2024-01-29 09:04,completed
+169,Legon Campus Main Gate,Jean Nelson Hall,shuttle_ride,4,2024-02-04 11:36,2024-02-04 15:21,assigned
+170,School of Business,Maintenance Depot,maintenance_IT,1,2024-02-14 16:35,2024-02-14 20:21,pending
+171,Shuttle Stop C,Science Block,maintenance_IT,1,2024-01-31 08:57,2024-01-31 11:57,pending
+172,Bani Hostel,Science Block,maintenance_plumbing,4,2024-02-11 07:38,2024-02-11 09:50,cancelled
+173,Great Hall,Maintenance Depot,maintenance_electrical,1,2024-01-29 17:46,2024-01-29 19:35,completed
+174,Shuttle Stop B,Maintenance Depot,maintenance_IT,3,2024-01-26 18:42,2024-01-26 20:24,completed
+175,Science Block,Science Block,maintenance_plumbing,3,2024-02-05 19:18,2024-02-05 22:50,completed
+176,Night Market,School of Engineering,maintenance_structural,4,2024-02-14 10:15,2024-02-14 14:01,completed
+177,Commonwealth Hall,Legon Campus Main Gate,shuttle_ride,4,2024-02-07 20:36,2024-02-07 21:34,assigned
+178,Volta Hall,Maintenance Depot,maintenance_plumbing,3,2024-02-09 13:04,2024-02-09 15:00,pending
+179,Mizpah Hostel,Shuttle Stop C,shuttle_ride,5,2024-02-13 09:04,2024-02-13 12:34,completed
+180,Legon Hall,Maintenance Depot,maintenance_IT,5,2024-01-26 13:30,2024-01-26 14:16,completed
+181,N Block,N Block,maintenance_electrical,5,2024-02-05 17:20,2024-02-05 19:33,cancelled
+182,Commonwealth Hall,Night Market,shuttle_ride,4,2024-01-15 20:46,2024-01-15 22:33,pending
+183,Mensah Sarbah Hall,Maintenance Depot,maintenance_structural,3,2024-01-17 12:46,2024-01-17 14:16,completed
+184,Great Hall,Maintenance Depot,maintenance_structural,5,2024-02-02 11:43,2024-02-02 13:05,completed
+185,Mensah Sarbah Hall,Maintenance Depot,maintenance_IT,4,2024-02-11 10:28,2024-02-11 13:19,pending
+186,Legacy Hall,Science Block,maintenance_structural,4,2024-02-12 09:04,2024-02-12 10:06,pending
+187,Bani Hostel,Maintenance Depot,maintenance_structural,1,2024-02-11 20:40,2024-02-11 23:28,assigned
+188,Bani Hostel,Maintenance Depot,maintenance_electrical,4,2024-01-18 20:33,2024-01-18 23:42,pending
+189,Legacy Hall,Amafi Hostel,shuttle_ride,4,2024-02-14 17:08,2024-02-14 17:57,pending
+190,Mizpah Hostel,Engineering Block,maintenance_structural,4,2024-01-18 09:45,2024-01-18 12:37,pending
+191,Engineering Block,Legon Campus Main Gate,shuttle_ride,2,2024-02-02 11:29,2024-02-02 13:24,pending
+192,Commonwealth Hall,Maintenance Depot,maintenance_electrical,3,2024-02-01 10:28,2024-02-01 13:45,pending
+193,School of Business,N Block,maintenance_plumbing,2,2024-02-14 19:49,2024-02-14 22:33,completed
+194,Akuafo Hall,Balme Library,shuttle_ride,4,2024-02-11 18:55,2024-02-11 19:39,assigned
+195,Night Market,Maintenance Depot,maintenance_plumbing,3,2024-02-14 15:57,2024-02-14 19:47,pending
+196,Legon Hall,Maintenance Depot,maintenance_plumbing,5,2024-02-08 14:33,2024-02-08 16:31,pending
+197,Mizpah Hostel,Maintenance Depot,maintenance_plumbing,4,2024-02-08 08:48,2024-02-08 11:42,completed
+198,Legon Hall,Maintenance Depot,maintenance_plumbing,5,2024-01-28 10:39,2024-01-28 11:58,completed
+199,Presbyterian Hall,N Block,maintenance_electrical,1,2024-02-03 09:07,2024-02-03 10:01,completed
+200,Science Block,N Block,maintenance_structural,5,2024-01-26 14:08,2024-01-26 17:57,completed
+201,Central Cafeteria,Engineering Block,maintenance_plumbing,4,2024-01-30 08:57,2024-01-30 12:24,pending
+202,School of Business,Jean Nelson Hall,shuttle_ride,2,2024-01-24 08:18,2024-01-24 11:37,pending
+203,Legacy Hall,Maintenance Depot,maintenance_electrical,1,2024-02-13 14:04,2024-02-13 15:30,pending
+204,Alexander Kwapong Hostel,Maintenance Depot,maintenance_plumbing,1,2024-01-31 20:16,2024-02-01 00:02,completed
+205,Volta Hall,Science Block,maintenance_electrical,3,2024-02-01 12:06,2024-02-01 15:31,pending
+206,Legacy Hall,Maintenance Depot,maintenance_IT,2,2024-01-29 10:36,2024-01-29 13:07,cancelled
+207,Legacy Hall,Shuttle Stop C,shuttle_ride,2,2024-02-12 12:36,2024-02-12 16:27,pending
+208,Shuttle Stop B,Legon Hall,shuttle_ride,2,2024-02-11 07:47,2024-02-11 08:17,completed
+209,Shuttle Stop A,Maintenance Depot,maintenance_electrical,4,2024-01-15 09:08,2024-01-15 11:55,pending
+210,School of Engineering,N Block,maintenance_electrical,2,2024-02-13 08:22,2024-02-13 10:28,completed
+211,Claver Robinson Hostel,Science Block,maintenance_plumbing,2,2024-01-22 18:07,2024-01-22 21:20,pending
+212,Amafi Hostel,School of Engineering,maintenance_plumbing,4,2024-01-22 11:40,2024-01-22 15:31,pending
+213,Legon Hall,Maintenance Depot,maintenance_electrical,1,2024-01-27 18:18,2024-01-27 19:32,completed
+214,Jean Nelson Hall,School of Engineering,maintenance_electrical,2,2024-01-22 18:15,2024-01-22 21:46,pending
+215,Legacy Hall,Maintenance Depot,maintenance_structural,2,2024-02-07 11:07,2024-02-07 14:16,completed
+216,Presbyterian Hall,Engineering Block,maintenance_plumbing,3,2024-02-06 11:20,2024-02-06 14:00,completed
+217,Amafi Hostel,Akuafo Hall,shuttle_ride,1,2024-01-25 07:50,2024-01-25 10:14,completed
+218,Alexander Kwapong Hostel,Maintenance Depot,maintenance_IT,4,2024-01-31 14:40,2024-01-31 15:24,cancelled
+219,Mizpah Hostel,Maintenance Depot,maintenance_IT,3,2024-02-04 12:28,2024-02-04 14:11,cancelled
+220,Akuafo Hall,Science Block,maintenance_IT,2,2024-02-02 18:27,2024-02-02 20:58,completed
+221,Shuttle Stop C,Amafi Hostel,shuttle_ride,2,2024-01-23 07:58,2024-01-23 08:45,pending
+222,Great Hall,School of Business,shuttle_ride,5,2024-02-11 15:12,2024-02-11 18:17,completed
+223,Shuttle Stop B,Night Market,shuttle_ride,1,2024-02-01 09:01,2024-02-01 12:30,completed
+224,School of Engineering,Engineering Block,maintenance_electrical,1,2024-01-23 15:12,2024-01-23 18:25,completed
+225,Great Hall,N Block,maintenance_electrical,5,2024-01-21 10:04,2024-01-21 11:05,completed
+226,Night Market,N Block,maintenance_electrical,2,2024-01-28 07:37,2024-01-28 09:32,pending
+227,Science Block,Science Block,maintenance_IT,2,2024-02-14 16:17,2024-02-14 19:21,pending
+228,Balme Library,Engineering Block,maintenance_electrical,2,2024-01-27 10:54,2024-01-27 12:22,completed
+229,School of Pharmacy,Maintenance Depot,maintenance_IT,3,2024-01-20 11:27,2024-01-20 12:20,assigned
+230,Volta Hall,Science Block,maintenance_structural,4,2024-02-02 09:14,2024-02-02 10:15,completed
+231,Mizpah Hostel,Maintenance Depot,maintenance_plumbing,1,2024-01-17 18:48,2024-01-17 21:27,pending
+232,Legacy Hall,Science Block,maintenance_electrical,3,2024-02-14 13:07,2024-02-14 14:04,pending
+233,Legacy Hall,Maintenance Depot,maintenance_IT,3,2024-01-24 13:44,2024-01-24 15:05,pending
+234,Bani Hostel,Akuafo Hall,shuttle_ride,3,2024-02-11 18:30,2024-02-11 19:48,pending
+235,Mensah Sarbah Hall,Maintenance Depot,maintenance_IT,3,2024-01-19 18:33,2024-01-19 21:05,pending
+236,N Block,Maintenance Depot,maintenance_plumbing,3,2024-02-10 14:33,2024-02-10 17:09,cancelled
+237,Volta Hall,School of Engineering,maintenance_plumbing,3,2024-02-14 11:31,2024-02-14 14:41,pending
+238,Engineering Block,Maintenance Depot,maintenance_plumbing,1,2024-02-08 08:47,2024-02-08 10:50,completed
+239,Bani Hostel,Science Block,maintenance_IT,5,2024-02-09 07:02,2024-02-09 09:36,cancelled
+240,Mizpah Hostel,School of Engineering,maintenance_electrical,1,2024-02-14 14:33,2024-02-14 16:55,completed
+241,N Block,Science Block,maintenance_IT,3,2024-01-31 09:14,2024-01-31 10:59,assigned
+242,Presbyterian Hall,Engineering Block,maintenance_plumbing,2,2024-01-23 19:23,2024-01-23 21:24,completed
+243,Balme Library,N Block,maintenance_plumbing,5,2024-01-20 18:39,2024-01-20 21:48,pending
+244,Balme Library,Maintenance Depot,maintenance_electrical,5,2024-01-26 18:19,2024-01-26 22:00,completed
+245,Alexander Kwapong Hostel,Maintenance Depot,maintenance_IT,3,2024-01-22 07:05,2024-01-22 08:36,completed
+246,Legon Hall,N Block,maintenance_plumbing,5,2024-02-04 15:43,2024-02-04 19:25,completed
+247,Alexander Kwapong Hostel,Volta Hall,shuttle_ride,4,2024-02-08 19:07,2024-02-08 22:56,pending
+248,Presbyterian Hall,Engineering Block,maintenance_plumbing,4,2024-02-14 11:21,2024-02-14 15:04,completed
+249,Commonwealth Hall,N Block,maintenance_plumbing,2,2024-02-08 19:23,2024-02-08 20:23,assigned
+250,Volta Hall,Commonwealth Hall,shuttle_ride,3,2024-02-06 14:23,2024-02-06 16:30,cancelled
+251,Central Cafeteria,Science Block,maintenance_plumbing,5,2024-01-24 16:55,2024-01-24 19:43,pending
+252,Mensah Sarbah Hall,Science Block,maintenance_IT,1,2024-02-09 08:00,2024-02-09 09:08,completed
+253,Volta Hall,Maintenance Depot,maintenance_IT,5,2024-01-17 07:24,2024-01-17 09:38,completed
+254,Great Hall,Maintenance Depot,maintenance_IT,4,2024-01-29 08:16,2024-01-29 09:21,completed
+255,Shuttle Stop B,Amafi Hostel,shuttle_ride,4,2024-01-22 07:48,2024-01-22 10:27,completed
+256,Akuafo Hall,Maintenance Depot,maintenance_structural,3,2024-01-20 20:04,2024-01-20 21:21,completed
+257,Engineering Block,N Block,maintenance_plumbing,5,2024-01-20 07:18,2024-01-20 10:57,assigned
+258,Shuttle Stop B,Mizpah Hostel,shuttle_ride,2,2024-02-01 10:59,2024-02-01 13:11,pending
+259,Volta Hall,Science Block,maintenance_structural,1,2024-02-12 07:32,2024-02-12 11:15,pending
+260,Legacy Hall,Maintenance Depot,maintenance_plumbing,4,2024-02-13 20:21,2024-02-13 22:17,completed
+261,Alexander Kwapong Hostel,Maintenance Depot,maintenance_IT,5,2024-02-03 14:35,2024-02-03 16:13,cancelled
+262,Shuttle Stop A,Maintenance Depot,maintenance_IT,5,2024-01-27 10:31,2024-01-27 11:29,pending
+263,Mensah Sarbah Hall,N Block,maintenance_structural,3,2024-02-12 18:21,2024-02-12 21:47,cancelled
+264,Legacy Hall,Maintenance Depot,maintenance_electrical,1,2024-02-14 13:43,2024-02-14 15:32,assigned
+265,Mensah Sarbah Hall,School of Engineering,maintenance_IT,5,2024-02-12 20:56,2024-02-12 21:59,pending
+266,Legacy Hall,N Block,maintenance_plumbing,5,2024-01-26 20:06,2024-01-26 21:25,pending
+267,Jean Nelson Hall,School of Engineering,maintenance_IT,2,2024-01-16 17:01,2024-01-16 20:20,cancelled
+268,School of Business,N Block,maintenance_structural,5,2024-02-14 08:11,2024-02-14 09:12,completed
+269,Mizpah Hostel,Maintenance Depot,maintenance_plumbing,4,2024-02-09 15:09,2024-02-09 17:38,pending
+270,School of Pharmacy,Maintenance Depot,maintenance_plumbing,5,2024-01-20 09:34,2024-01-20 12:32,pending
+271,School of Business,Presbyterian Hall,shuttle_ride,4,2024-01-27 13:43,2024-01-27 16:12,pending
+272,Commonwealth Hall,Maintenance Depot,maintenance_electrical,2,2024-02-01 10:01,2024-02-01 13:16,pending
+273,Bani Hostel,Maintenance Depot,maintenance_IT,2,2024-01-20 19:30,2024-01-20 22:33,pending
+274,Alexander Kwapong Hostel,Engineering Block,maintenance_plumbing,3,2024-01-16 15:14,2024-01-16 16:46,pending
+275,Legacy Hall,School of Engineering,maintenance_plumbing,5,2024-01-22 17:43,2024-01-22 19:49,pending
+276,Engineering Block,Maintenance Depot,maintenance_electrical,3,2024-02-13 12:45,2024-02-13 14:12,pending
+277,Night Market,Maintenance Depot,maintenance_structural,5,2024-02-14 10:41,2024-02-14 12:03,completed
+278,School of Pharmacy,Maintenance Depot,maintenance_structural,3,2024-01-31 15:07,2024-01-31 16:54,pending
+279,Legon Hall,Maintenance Depot,maintenance_electrical,2,2024-01-15 16:03,2024-01-15 17:00,pending
+280,Alexander Kwapong Hostel,Science Block,maintenance_plumbing,4,2024-01-16 12:57,2024-01-16 15:28,pending
+281,Alexander Kwapong Hostel,Volta Hall,shuttle_ride,3,2024-01-15 08:10,2024-01-15 11:05,cancelled
+282,Commonwealth Hall,Maintenance Depot,maintenance_plumbing,4,2024-01-28 12:34,2024-01-28 14:27,assigned
+283,Balme Library,Maintenance Depot,maintenance_structural,1,2024-01-17 11:09,2024-01-17 12:17,completed
+284,Akuafo Hall,Maintenance Depot,maintenance_plumbing,4,2024-02-07 07:59,2024-02-07 10:53,completed
+285,Engineering Block,N Block,maintenance_plumbing,5,2024-02-10 20:35,2024-02-10 22:02,pending
+286,Engineering Block,Maintenance Depot,maintenance_structural,1,2024-01-29 14:58,2024-01-29 17:18,cancelled
+287,Akuafo Hall,Maintenance Depot,maintenance_IT,2,2024-01-28 08:52,2024-01-28 10:33,pending
+288,School of Pharmacy,Engineering Block,maintenance_IT,3,2024-01-20 16:27,2024-01-20 18:12,pending
+289,Amafi Hostel,Legacy Hall,shuttle_ride,3,2024-01-26 13:02,2024-01-26 15:43,completed
+290,Alexander Kwapong Hostel,Maintenance Depot,maintenance_electrical,5,2024-02-12 15:13,2024-02-12 17:26,pending
+291,Night Market,School of Engineering,maintenance_structural,2,2024-01-19 16:56,2024-01-19 19:41,pending
+292,Akuafo Hall,School of Engineering,maintenance_plumbing,2,2024-02-12 19:36,2024-02-12 22:37,completed
+293,Legon Hall,Maintenance Depot,maintenance_electrical,3,2024-02-03 11:56,2024-02-03 13:57,completed
+294,N Block,Engineering Block,maintenance_plumbing,3,2024-02-02 08:01,2024-02-02 09:12,cancelled
+295,Shuttle Stop B,Maintenance Depot,maintenance_structural,1,2024-02-10 14:18,2024-02-10 18:09,pending
+296,Commonwealth Hall,School of Engineering,maintenance_plumbing,5,2024-01-23 13:23,2024-01-23 15:26,pending
+297,Night Market,School of Engineering,maintenance_IT,4,2024-02-10 15:11,2024-02-10 18:57,pending
+298,Volta Hall,N Block,maintenance_IT,4,2024-01-18 07:51,2024-01-18 10:50,completed
+299,Mizpah Hostel,Maintenance Depot,maintenance_plumbing,5,2024-02-08 15:43,2024-02-08 18:36,pending
+300,Amafi Hostel,Maintenance Depot,maintenance_electrical,4,2024-01-17 07:38,2024-01-17 10:52,pending
+301,Balme Library,N Block,maintenance_electrical,5,2024-02-02 19:53,2024-02-02 20:42,pending
+302,Amafi Hostel,School of Engineering,maintenance_structural,5,2024-02-03 12:21,2024-02-03 16:06,cancelled
+303,Alexander Kwapong Hostel,Science Block,maintenance_plumbing,4,2024-01-23 12:14,2024-01-23 13:33,assigned
+304,Amafi Hostel,Engineering Block,maintenance_electrical,1,2024-02-02 19:45,2024-02-02 22:18,pending
+305,School of Pharmacy,Maintenance Depot,maintenance_structural,5,2024-01-21 08:11,2024-01-21 08:41,completed
+306,Shuttle Stop C,Maintenance Depot,maintenance_electrical,5,2024-02-11 20:55,2024-02-11 23:23,pending
+307,Claver Robinson Hostel,Maintenance Depot,maintenance_plumbing,2,2024-01-20 20:48,2024-01-20 22:27,pending
+308,Night Market,School of Business,shuttle_ride,2,2024-02-13 20:02,2024-02-13 21:37,pending
+309,Legacy Hall,Maintenance Depot,maintenance_IT,5,2024-02-08 14:03,2024-02-08 16:23,completed
+310,Night Market,School of Engineering,maintenance_structural,1,2024-01-29 11:04,2024-01-29 11:46,cancelled
+311,Night Market,Maintenance Depot,maintenance_electrical,4,2024-02-14 09:47,2024-02-14 11:55,cancelled
+312,Legacy Hall,Science Block,maintenance_structural,2,2024-02-09 08:16,2024-02-09 09:15,completed
+313,Akuafo Hall,Mensah Sarbah Hall,shuttle_ride,5,2024-01-19 19:57,2024-01-19 21:57,cancelled
+314,Engineering Block,Shuttle Stop B,shuttle_ride,3,2024-01-23 14:30,2024-01-23 16:52,assigned
+315,Central Cafeteria,N Block,maintenance_IT,5,2024-01-15 16:26,2024-01-15 18:23,pending
+316,Presbyterian Hall,School of Engineering,maintenance_IT,4,2024-02-05 12:08,2024-02-05 12:40,pending
+317,Amafi Hostel,N Block,maintenance_IT,1,2024-02-07 08:20,2024-02-07 09:04,pending
+318,Science Block,Maintenance Depot,maintenance_electrical,2,2024-02-10 08:56,2024-02-10 10:52,assigned
+319,Bani Hostel,Maintenance Depot,maintenance_structural,2,2024-02-13 19:46,2024-02-13 20:44,completed
+320,Central Cafeteria,Engineering Block,maintenance_plumbing,1,2024-01-17 08:56,2024-01-17 12:16,assigned

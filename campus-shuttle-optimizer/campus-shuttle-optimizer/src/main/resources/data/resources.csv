@@ -1,0 +1,36 @@
+resourceId,type,homeLocation,capacity,availabilityStatus
+1,Shuttle Bus,Shuttle Stop A,25,available
+2,Shuttle Bus,School of Engineering,30,available
+3,Shuttle Bus,Balme Library,30,available
+4,Shuttle Bus,School of Pharmacy,30,under_maintenance
+5,Shuttle Bus,School of Engineering,20,available
+6,Shuttle Bus,Balme Library,30,available
+7,Shuttle Bus,Shuttle Stop A,25,available
+8,Shuttle Bus,Legon Campus Main Gate,30,under_maintenance
+9,Shuttle Bus,School of Pharmacy,20,available
+10,Shuttle Bus,School of Engineering,14,in_service
+11,Technician-IT,Shuttle Stop C,1,available
+12,Technician-IT,Bani Hostel,1,under_maintenance
+13,Technician-Structural,Bani Hostel,1,in_service
+14,Technician-Electrical,Shuttle Stop B,1,available
+15,Technician-Structural,Bani Hostel,1,available
+16,Technician-Plumbing,Shuttle Stop B,1,under_maintenance
+17,Technician-Structural,Shuttle Stop B,1,available
+18,Technician-Structural,Bani Hostel,1,in_service
+19,Technician-Electrical,Bani Hostel,1,available
+20,Technician-Plumbing,Bani Hostel,1,available
+21,Technician-Electrical,Shuttle Stop C,1,in_service
+22,Technician-Electrical,Bani Hostel,1,under_maintenance
+23,Technician-Electrical,Bani Hostel,1,available
+24,Technician-Structural,Shuttle Stop B,1,available
+25,Technician-Electrical,Bani Hostel,1,available
+26,Technician-Structural,Shuttle Stop B,1,under_maintenance
+27,Technician-Structural,Bani Hostel,1,available
+28,Technician-IT,Shuttle Stop C,1,under_maintenance
+29,Technician-Electrical,Shuttle Stop B,1,in_service
+30,Technician-IT,Shuttle Stop B,1,available
+31,Technician-Electrical,Bani Hostel,1,available
+32,Technician-Structural,Shuttle Stop B,1,available
+33,Technician-Plumbing,Bani Hostel,1,under_maintenance
+34,Technician-Structural,Bani Hostel,1,available
+35,Technician-IT,Bani Hostel,1,under_maintenance
