@@ -1,0 +1,5 @@
+resource_id,resource_type,name,specialty,home_location_id,capacity,availability_status
+1,SHUTTLE,Shuttle-01,,4,30,AVAILABLE
+2,SHUTTLE,Shuttle-02,,4,25,AVAILABLE
+3,TECHNICIAN,Tech-IT-01,IT,5,,AVAILABLE
+4,TECHNICIAN,Tech-Elec-01,ELECTRICAL,5,,AVAILABLE
