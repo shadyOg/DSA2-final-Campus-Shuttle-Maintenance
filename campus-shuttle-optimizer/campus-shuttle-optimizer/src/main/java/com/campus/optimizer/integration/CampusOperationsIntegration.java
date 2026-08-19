@@ -1,6 +1,7 @@
 package com.campus.optimizer.integration;
 
 import com.campus.optimizer.optimization.CampusServiceOptimizer;
+import com.campus.optimizer.optimization.GreedyMaintenanceAllocator;
 import com.campus.optimizer.optimization.OptimizationResult;
 import com.campus.optimizer.optimization.ServiceRequest;
 
@@ -22,5 +23,13 @@ public class CampusOperationsIntegration {
         System.out.println("Selected IDs: " + result.getSelectedRequestIds());
         System.out.println("Total benefit: " + result.getTotalBenefit());
         System.out.println("Total duration: " + result.getTotalDuration());
+
+        GreedyMaintenanceAllocator allocator = new GreedyMaintenanceAllocator();
+        OptimizationResult maintenanceResult = allocator.allocate(requests, 7);
+
+        System.out.println("Greedy maintenance allocation");
+        System.out.println("Selected IDs: " + maintenanceResult.getSelectedRequestIds());
+        System.out.println("Total benefit: " + maintenanceResult.getTotalBenefit());
+        System.out.println("Total duration: " + maintenanceResult.getTotalDuration());
     }
 }
