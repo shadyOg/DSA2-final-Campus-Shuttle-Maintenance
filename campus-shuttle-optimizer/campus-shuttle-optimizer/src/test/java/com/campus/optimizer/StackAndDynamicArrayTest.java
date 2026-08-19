@@ -1,5 +1,8 @@
 package com.campus.optimizer;
 
+import com.campus.optimizer.structures.DynamicArray;
+import com.campus.optimizer.structures.Stack;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

@@ -1,6 +1,7 @@
 package com.campus.optimizer.optimization;
 
-import java.util.ArrayList;
+import com.campus.optimizer.structures.DynamicArray;
+
 import java.util.List;
 
 public class CampusServiceOptimizer {
@@ -33,19 +34,27 @@ public class CampusServiceOptimizer {
         }
 
         int finalCapacity = capacity;
-        List<String> selectedIds = new ArrayList<>();
+        DynamicArray<String> selectedIds = new DynamicArray<>();
         int totalDuration = 0;
         int totalBenefit = bestValue[requestCount][finalCapacity];
 
         for (int index = requestCount; index > 0; index--) {
             if (taken[index][finalCapacity]) {
                 ServiceRequest request = requests.get(index - 1);
-                selectedIds.add(0, request.getId());
+                prepend(selectedIds, request.getId());
                 totalDuration += request.getDuration();
                 finalCapacity -= request.getDuration();
             }
         }
 
         return new OptimizationResult(selectedIds, totalBenefit, totalDuration);
+    }
+
+    private void prepend(DynamicArray<String> values, String value) {
+        values.add(value);
+        for (int index = values.size() - 1; index > 0; index--) {
+            values.set(index, values.get(index - 1));
+        }
+        values.set(0, value);
     }
 }

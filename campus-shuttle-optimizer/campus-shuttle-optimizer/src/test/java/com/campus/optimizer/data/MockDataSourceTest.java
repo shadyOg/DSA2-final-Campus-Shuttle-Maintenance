@@ -1,29 +1,36 @@
 package com.campus.optimizer.data;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertFalse;
 
-class MockDataSourceTest {
+public class MockDataSourceTest {
 
     @Test
-    void mockDataSourceContainsLocations() {
+    public void mockDataSourceContainsLocations() {
         MockDataSource dataSource = new MockDataSource();
 
         assertFalse(dataSource.getLocations().isEmpty());
     }
 
     @Test
-    void mockDataSourceContainsRoads() {
+    public void mockDataSourceContainsRoads() {
         MockDataSource dataSource = new MockDataSource();
 
         assertFalse(dataSource.getRoads().isEmpty());
     }
 
     @Test
-    void mockDataSourceContainsServiceRequests() {
+    public void mockDataSourceContainsServiceRequests() {
         MockDataSource dataSource = new MockDataSource();
 
         assertFalse(dataSource.getServiceRequests().isEmpty());
+    }
+
+    @Test
+    public void mockDataSourceContainsResources() {
+        MockDataSource dataSource = new MockDataSource();
+
+        assertFalse(dataSource.getResources().isEmpty());
     }
 }

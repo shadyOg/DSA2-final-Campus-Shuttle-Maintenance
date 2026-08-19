@@ -1,4 +1,4 @@
-package com.campus.optimizer;
+package com.campus.optimizer.structures;
 
 public class Stack<T> {
     private final DynamicArray<T> data;

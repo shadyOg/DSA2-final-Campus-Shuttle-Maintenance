@@ -1,5 +1,7 @@
 package com.campus.optimizer.data;
 
+import com.campus.optimizer.model.Resource;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,7 @@ public class MockDataSource implements DataSource {
     private final List<Location> locations = new ArrayList<>();
     private final List<Road> roads = new ArrayList<>();
     private final List<ServiceRequest> serviceRequests = new ArrayList<>();
+    private final List<Resource> resources = new ArrayList<>();
 
     public MockDataSource() {
         //locations
@@ -44,7 +47,8 @@ public class MockDataSource implements DataSource {
 
         serviceRequests.add(new ServiceRequest(5, 8, "SHUTTLE", "Student pickup request at New N Block"));
 
-        
+        resources.add(new Resource(1, "Shuttle Bus", "Balme Library", 20, "available"));
+        resources.add(new Resource(2, "Technician-Electrical", "Maintenance Depot", 1, "available"));
     }
 
     @Override
@@ -60,5 +64,10 @@ public class MockDataSource implements DataSource {
     @Override
     public List<ServiceRequest> getServiceRequests() {
         return serviceRequests;
+    }
+
+    @Override
+    public List<Resource> getResources() {
+        return resources;
     }
 }

@@ -1,4 +1,4 @@
-package com.campus.optimizer;
+package com.campus.optimizer.structures;
 
 import java.util.Arrays;
 
@@ -38,12 +38,10 @@ public class DynamicArray<T> {
     public T remove(int index) {
         checkIndex(index);
         T removed = elementAt(index);
-
         int elementsToShift = size - index - 1;
         if (elementsToShift > 0) {
             System.arraycopy(data, index + 1, data, index, elementsToShift);
         }
-
         data[--size] = null;
         return removed;
     }
@@ -65,12 +63,10 @@ public class DynamicArray<T> {
         if (requiredCapacity <= data.length) {
             return;
         }
-
         int newCapacity = data.length == 0 ? 1 : data.length;
         while (newCapacity < requiredCapacity) {
             newCapacity *= 2;
         }
-
         data = Arrays.copyOf(data, newCapacity);
     }
 

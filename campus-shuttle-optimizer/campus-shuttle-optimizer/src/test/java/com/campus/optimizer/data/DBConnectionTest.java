@@ -1,15 +1,16 @@
 package com.campus.optimizer.data;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.sql.Connection;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 
-class DBConnectionTest {
+public class DBConnectionTest {
 
     @Test
-    void canOpenDatabaseConnection() throws Exception {
+    public void canOpenDatabaseConnection() throws Exception {
         try (Connection connection = DBConnection.getConnection()) {
             assertNotNull(connection);
             assertFalse(connection.isClosed());

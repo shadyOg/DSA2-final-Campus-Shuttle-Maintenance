@@ -1,8 +1,9 @@
 package com.campus.optimizer.graph;
 
+import com.campus.optimizer.structures.MinHeap;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.PriorityQueue;
 
 public final class Dijkstra {
 
@@ -20,11 +21,11 @@ public final class Dijkstra {
         }
         distances.put(startVertex, 0.0);
 
-        PriorityQueue<VertexDistance> queue = new PriorityQueue<>();
-        queue.add(new VertexDistance(startVertex, 0.0));
+        MinHeap<VertexDistance> queue = new MinHeap<>();
+        queue.offer(new VertexDistance(startVertex, 0.0));
 
         while (!queue.isEmpty()) {
-            VertexDistance current = queue.remove();
+            VertexDistance current = queue.poll();
             if (current.distance > distances.get(current.vertex)) {
                 continue;
             }
@@ -38,7 +39,7 @@ public final class Dijkstra {
                 double newDistance = current.distance + weight;
                 if (newDistance < distances.get(neighbor)) {
                     distances.put(neighbor, newDistance);
-                    queue.add(new VertexDistance(neighbor, newDistance));
+                    queue.offer(new VertexDistance(neighbor, newDistance));
                 }
             }
         }

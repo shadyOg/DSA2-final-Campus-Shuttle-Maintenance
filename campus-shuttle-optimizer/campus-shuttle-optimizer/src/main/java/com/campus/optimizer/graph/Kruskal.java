@@ -1,5 +1,7 @@
 package com.campus.optimizer.graph;
 
+import com.campus.optimizer.structures.DisjointSet;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -64,41 +66,4 @@ public final class Kruskal {
         }
     }
 
-    private static final class DisjointSet {
-        private final int[] parent;
-        private final int[] rank;
-
-        private DisjointSet(int size) {
-            parent = new int[size];
-            rank = new int[size];
-            for (int index = 0; index < size; index++) {
-                parent[index] = index;
-            }
-        }
-
-        private boolean union(int first, int second) {
-            int firstRoot = find(first);
-            int secondRoot = find(second);
-            if (firstRoot == secondRoot) {
-                return false;
-            }
-
-            if (rank[firstRoot] < rank[secondRoot]) {
-                parent[firstRoot] = secondRoot;
-            } else if (rank[firstRoot] > rank[secondRoot]) {
-                parent[secondRoot] = firstRoot;
-            } else {
-                parent[secondRoot] = firstRoot;
-                rank[firstRoot]++;
-            }
-            return true;
-        }
-
-        private int find(int vertex) {
-            if (parent[vertex] != vertex) {
-                parent[vertex] = find(parent[vertex]);
-            }
-            return parent[vertex];
-        }
-    }
 }

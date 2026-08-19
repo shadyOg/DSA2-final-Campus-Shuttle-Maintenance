@@ -1,10 +1,10 @@
 package com.campus.optimizer.graph;
 
+import com.campus.optimizer.structures.CustomSet;
+import com.campus.optimizer.structures.MinHeap;
+
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Set;
 
 public final class Prim {
 
@@ -18,14 +18,14 @@ public final class Prim {
             return minimumSpanningTree;
         }
 
-        Set<String> visited = new HashSet<>();
-        PriorityQueue<CandidateEdge> queue = new PriorityQueue<>();
+        CustomSet<String> visited = new CustomSet<>();
+        MinHeap<CandidateEdge> queue = new MinHeap<>();
         String startVertex = vertices.get(0);
         visited.add(startVertex);
         addEdgesToQueue(graph, startVertex, queue, visited);
 
         while (!queue.isEmpty() && minimumSpanningTree.size() < vertices.size() - 1) {
-            CandidateEdge candidate = queue.remove();
+            CandidateEdge candidate = queue.poll();
             if (visited.contains(candidate.destination)) {
                 continue;
             }
@@ -47,10 +47,10 @@ public final class Prim {
     }
 
     private static void addEdgesToQueue(
-            Graph graph, String source, PriorityQueue<CandidateEdge> queue, Set<String> visited) {
+            Graph graph, String source, MinHeap<CandidateEdge> queue, CustomSet<String> visited) {
         for (String neighbor : graph.getNeighbors(source)) {
             if (!visited.contains(neighbor)) {
-                queue.add(new CandidateEdge(source, neighbor, graph.getWeight(source, neighbor)));
+                queue.offer(new CandidateEdge(source, neighbor, graph.getWeight(source, neighbor)));
             }
         }
     }

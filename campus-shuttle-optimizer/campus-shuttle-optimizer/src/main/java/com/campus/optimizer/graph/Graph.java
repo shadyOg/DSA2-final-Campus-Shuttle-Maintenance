@@ -1,21 +1,22 @@
 package com.campus.optimizer.graph;
 
+import com.campus.optimizer.structures.CustomMap;
+import com.campus.optimizer.structures.CustomSet;
+import com.campus.optimizer.structures.DynamicArray;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class Graph {
 
-    private final Map<String, Integer> nodeToIdx = new LinkedHashMap<>();
-    private final Map<Integer, String> idxToNode = new LinkedHashMap<>();
+    private final CustomMap<String, Integer> nodeToIdx = new CustomMap<>();
+    private final CustomMap<Integer, String> idxToNode = new CustomMap<>();
     private int nodeCount = 0;
 
-    private final Map<String, Map<String, Double>> adjList = new LinkedHashMap<>();
+    private final CustomMap<String, CustomMap<String, Double>> adjList = new CustomMap<>();
 
     private int maxVertices;
     private double[][] adjMatrix;
@@ -51,7 +52,7 @@ public class Graph {
         nodeToIdx.put(vertex, nodeCount);
         idxToNode.put(nodeCount, vertex);
         nodeCount++;
-        adjList.put(vertex, new LinkedHashMap<>());
+        adjList.put(vertex, new CustomMap<>());
     }
 
     public void addEdge(String u, String v, double weight) {
@@ -79,7 +80,12 @@ public class Graph {
         if (!adjList.containsKey(vertex)) {
             return new ArrayList<>();
         }
-        return new ArrayList<>(adjList.get(vertex).keySet());
+        DynamicArray<String> neighbors = adjList.get(vertex).keySet();
+        List<String> result = new ArrayList<>();
+        for (int index = 0; index < neighbors.size(); index++) {
+            result.add(neighbors.get(index));
+        }
+        return result;
     }
 
     public List<String> bfs(String startVertex) {
@@ -88,7 +94,7 @@ public class Graph {
             return traversalOrder;
         }
 
-        Set<String> visited = new HashSet<>();
+        CustomSet<String> visited = new CustomSet<>();
         Deque<String> queue = new ArrayDeque<>();
 
         visited.add(startVertex);
@@ -98,7 +104,9 @@ public class Graph {
             String current = queue.removeFirst();
             traversalOrder.add(current);
 
-            for (String neighbor : adjList.get(current).keySet()) {
+            DynamicArray<String> neighbors = adjList.get(current).keySet();
+            for (int index = 0; index < neighbors.size(); index++) {
+                String neighbor = neighbors.get(index);
                 if (!visited.contains(neighbor)) {
                     visited.add(neighbor);
                     queue.addLast(neighbor);
@@ -114,7 +122,7 @@ public class Graph {
             return traversalOrder;
         }
 
-        Set<String> visited = new HashSet<>();
+        CustomSet<String> visited = new CustomSet<>();
         Deque<String> stack = new ArrayDeque<>();
         stack.push(startVertex);
 
@@ -125,7 +133,9 @@ public class Graph {
                 visited.add(current);
                 traversalOrder.add(current);
 
-                for (String neighbor : adjList.get(current).keySet()) {
+                DynamicArray<String> neighbors = adjList.get(current).keySet();
+                for (int index = 0; index < neighbors.size(); index++) {
+                    String neighbor = neighbors.get(index);
                     if (!visited.contains(neighbor)) {
                         stack.push(neighbor);
                     }
@@ -177,11 +187,16 @@ public class Graph {
     }
 
     public List<String> getVertices() {
-        return new ArrayList<>(nodeToIdx.keySet());
+        DynamicArray<String> vertices = nodeToIdx.keySet();
+        List<String> result = new ArrayList<>();
+        for (int index = 0; index < vertices.size(); index++) {
+            result.add(vertices.get(index));
+        }
+        return result;
     }
 
     public double getWeight(String u, String v) {
-        Map<String, Double> edges = adjList.get(u);
+        CustomMap<String, Double> edges = adjList.get(u);
         if (edges == null) {
             return 0.0;
         }
