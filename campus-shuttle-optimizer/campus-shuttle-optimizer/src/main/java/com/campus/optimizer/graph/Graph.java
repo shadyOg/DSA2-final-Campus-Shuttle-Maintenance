@@ -135,6 +135,10 @@ public class Graph {
         return traversalOrder;
     }
 
+    public Map<String, Double> dijkstra(String startVertex) {
+        return Dijkstra.shortestPaths(this, startVertex);
+    }
+
     public void displayMatrix() {
         System.out.println("\nAdjacency matrix representation");
 
