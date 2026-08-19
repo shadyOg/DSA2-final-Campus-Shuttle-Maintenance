@@ -1,4 +1,4 @@
-package com.campus.optimizer.optimisation;
+package com.campus.optimizer.optimization;
 
 public class ServiceRequest {
     private final String id;

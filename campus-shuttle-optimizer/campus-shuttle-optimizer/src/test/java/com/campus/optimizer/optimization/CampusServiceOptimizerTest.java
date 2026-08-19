@@ -1,4 +1,4 @@
-package com.campus.optimizer.optimisation;
+package com.campus.optimizer.optimization;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

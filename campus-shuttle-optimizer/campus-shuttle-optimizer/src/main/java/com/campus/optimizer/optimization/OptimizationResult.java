@@ -1,4 +1,4 @@
-package com.campus.optimizer.optimisation;
+package com.campus.optimizer.optimization;
 
 import java.util.ArrayList;
 import java.util.Collections;

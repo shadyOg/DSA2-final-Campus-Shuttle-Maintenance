@@ -1,8 +1,8 @@
 package com.campus.optimizer.integration;
 
-import com.campus.optimizer.optimisation.CampusServiceOptimizer;
-import com.campus.optimizer.optimisation.OptimizationResult;
-import com.campus.optimizer.optimisation.ServiceRequest;
+import com.campus.optimizer.optimization.CampusServiceOptimizer;
+import com.campus.optimizer.optimization.OptimizationResult;
+import com.campus.optimizer.optimization.ServiceRequest;
 
 import java.util.Arrays;
 import java.util.List;
