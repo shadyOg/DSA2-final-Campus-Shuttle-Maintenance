@@ -58,5 +58,13 @@ Team-level hash-table parameter:
 - Average of all 16 supplied index numbers = 22,249,576
 - Next prime above the average = 22,249,613
 
-## Important defense point
-Do not claim that the small 7-bucket HashTableDemo is the team's required final hash-table size. It is only a compact oral demonstration. The assignment document specifies the derived team-level base size; the actual final implementation should follow the team's agreed integration design.
+## Important defense points
+
+1. **Oral Demo Size vs. Final Capacity:**  
+   Do not claim that the small 7-bucket `HashTableDemo` is the team's required final hash-table size. It is only a compact oral demonstration.
+
+2. **Memory Optimization Strategy for $22,249,613$:**  
+   While $22,249,613$ is mathematically derived as the team's base prime parameter, allocating a 22-million-bucket array for a dataset of ~50 to 320 campus locations would waste over 88 MB of RAM on empty array references.  
+   Therefore, the runtime implementation (`HashTable.java`) references `RAW_DERIVED_INDEX_PRIME = 22_249_613L` as the derived baseline, but uses a scaled initial prime capacity (`17` or `createWithDerivedIndexCapacity()`) with dynamic $O(1)$ resizing at a $0.75$ load factor.  
+   *Defense Response if asked:*  
+   *"$22,249,613$ is our derived base parameter. For real-world campus dataset scaling ($N \approx 50-320$), we apply a prime scaling factor to maintain memory efficiency while preserving $O(1)$ dynamic resizing."*

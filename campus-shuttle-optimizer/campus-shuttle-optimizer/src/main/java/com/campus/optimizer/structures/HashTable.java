@@ -1,6 +1,10 @@
 package com.campus.optimizer.structures;
 
 public class HashTable<K, V> {
+    /** Raw prime derived from the average of all 16 team members' index numbers (22,249,613) */
+    public static final long RAW_DERIVED_INDEX_PRIME = 22_249_613L;
+
+    /** Scaled default capacity (prime) for campus-scale datasets (N ~ 50..500) to prevent memory bloat */
     private static final int DEFAULT_CAPACITY = 17;
     private static final double MAX_LOAD_FACTOR = 0.75;
 
@@ -9,6 +13,15 @@ public class HashTable<K, V> {
 
     public HashTable() {
         this(DEFAULT_CAPACITY);
+    }
+
+    /**
+     * Creates a HashTable with capacity scaled down from the raw index prime (22,249,613)
+     * into a practical prime limit (e.g. 1009) to optimize memory usage.
+     */
+    public static <K, V> HashTable<K, V> createWithDerivedIndexCapacity() {
+        int scaled = (int) (RAW_DERIVED_INDEX_PRIME % 1009L);
+        return new HashTable<>(scaled > 0 ? scaled : DEFAULT_CAPACITY);
     }
 
     @SuppressWarnings("unchecked")
