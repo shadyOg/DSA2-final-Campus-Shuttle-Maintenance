@@ -14,14 +14,19 @@ public class AlgorithmRunDAO {
     }
 
     public void insert(AlgorithmRun run) {
-        String sql = "INSERT INTO algorithm_runs (algorithmName, inputSize, timeNs, memoryKb, dateRun) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO algorithm_runs (runId, algorithmName, inputSize, timeNs, memoryKb, dateRun) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = db.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setString(1, run.getAlgorithmName());
-            stmt.setInt(2, run.getInputSize());
-            stmt.setDouble(3, run.getTimeNs());
-            stmt.setDouble(4, run.getMemoryKb());
-            stmt.setString(5, run.getDateRun());
+            if (run.getRunId() > 0) {
+                stmt.setInt(1, run.getRunId());
+            } else {
+                stmt.setNull(1, Types.INTEGER);
+            }
+            stmt.setString(2, run.getAlgorithmName());
+            stmt.setInt(3, run.getInputSize());
+            stmt.setDouble(4, run.getTimeNs());
+            stmt.setDouble(5, run.getMemoryKb());
+            stmt.setString(6, run.getDateRun());
             stmt.executeUpdate();
             try (ResultSet rs = stmt.getGeneratedKeys()) {
                 if (rs.next()) {
