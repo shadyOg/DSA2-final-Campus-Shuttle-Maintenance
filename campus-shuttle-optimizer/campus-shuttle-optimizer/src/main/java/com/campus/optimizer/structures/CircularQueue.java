@@ -11,14 +11,14 @@ public class CircularQueue<T> {
 
     @SuppressWarnings("unchecked")
     public CircularQueue(int capacity) {
+        if (capacity <= 0) throw new IllegalArgumentException("Capacity must be greater than 0");
         this.capacity = capacity;
         this.data = (T[]) new Object[capacity];
     }
 
     public boolean enqueue(T item) {
-        if (isFull()) {
-            return false;
-        }
+        if (item == null) throw new IllegalArgumentException("Null values cannot be enqueued");
+        if (isFull()) return false;
         data[tail] = item;
         tail = (tail + 1) % capacity;
         size++;
@@ -26,9 +26,7 @@ public class CircularQueue<T> {
     }
 
     public T dequeue() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Queue is empty");
-        }
+        if (isEmpty()) throw new NoSuchElementException("CircularQueue underflow: queue is empty");
         T item = data[head];
         data[head] = null;
         head = (head + 1) % capacity;
@@ -37,21 +35,19 @@ public class CircularQueue<T> {
     }
 
     public T peek() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Queue is empty");
-        }
+        if (isEmpty()) throw new NoSuchElementException("CircularQueue is empty");
         return data[head];
     }
 
-    public boolean isFull() {
-        return size == capacity;
+    public void clear() {
+        for (int i = 0; i < capacity; i++) data[i] = null;
+        head = 0;
+        tail = 0;
+        size = 0;
     }
 
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    public int size() {
-        return size;
-    }
+    public boolean isFull() { return size == capacity; }
+    public boolean isEmpty() { return size == 0; }
+    public int size() { return size; }
+    public int capacity() { return capacity; }
 }
