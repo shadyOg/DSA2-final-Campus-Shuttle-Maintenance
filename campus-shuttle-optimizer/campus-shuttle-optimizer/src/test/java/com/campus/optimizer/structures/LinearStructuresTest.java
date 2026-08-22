@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 
 public class LinearStructuresTest {
 
-    // --- LinkedList Edge Cases ---
+    
     @Test
     public void testLinkedListEdgeCases() {
         LinkedList<String> list = new LinkedList<>();
@@ -34,7 +34,7 @@ public class LinearStructuresTest {
         Assert.assertTrue(list.isEmpty());
     }
 
-    // --- Queue Edge Cases ---
+    
     @Test
     public void testQueueEdgeCases() {
         Queue<String> queue = new Queue<>();
@@ -60,7 +60,7 @@ public class LinearStructuresTest {
         Assert.assertTrue(queue.isEmpty());
     }
 
-    // --- CircularQueue Edge Cases ---
+    
     @Test
     public void testCircularQueueEdgeCasesAndWrapAround() {
         try {
@@ -94,7 +94,7 @@ public class LinearStructuresTest {
         Assert.assertTrue(cq.isEmpty());
     }
 
-    // --- Deque Edge Cases ---
+    
     @Test
     public void testDequeEdgeCases() {
         Deque<Integer> deque = new Deque<>();
