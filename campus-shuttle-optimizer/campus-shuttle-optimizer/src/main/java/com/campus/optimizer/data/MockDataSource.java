@@ -1,4 +1,4 @@
-package com.campus.optimizer.data;
+package com.campus.optimizer.model;
 
 import com.campus.optimizer.db.LocationDAO;
 import com.campus.optimizer.db.RoadDAO;
