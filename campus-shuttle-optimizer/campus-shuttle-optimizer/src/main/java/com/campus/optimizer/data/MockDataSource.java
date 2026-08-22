@@ -6,6 +6,9 @@ import com.campus.optimizer.db.ServiceRequestDAO;
 import com.campus.optimizer.db.ResourceDAO;
 
 import java.util.List;
+import com.campus.optimizer.model.Location;
+import com.campus.optimizer.model.Road;
+import com.campus.optimizer.model.ServiceRequest;
 import com.campus.optimizer.model.Resource;
 
 public class MockDataSource implements DataSource {
