@@ -1,76 +1,127 @@
 package com.campus.optimizer.structures;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.Assert;
 import java.util.NoSuchElementException;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class LinearStructuresTest {
 
-    
+    // --- LinkedList Edge Cases ---
     @Test
-    void testLinkedListEdgeCases() {
+    public void testLinkedListEdgeCases() {
         LinkedList<String> list = new LinkedList<>();
-        assertTrue(list.isEmpty());
-        assertEquals(0, list.size());
-        assertThrows(NoSuchElementException.class, list::removeFirst);
-        assertThrows(NoSuchElementException.class, list::getFirst);
-        assertThrows(IllegalArgumentException.class, () -> list.addFirst(null));
+        Assert.assertTrue(list.isEmpty());
+        Assert.assertEquals(0, list.size());
+
+        try {
+            list.removeFirst();
+            Assert.fail("Expected NoSuchElementException");
+        } catch (NoSuchElementException expected) {}
+
+        try {
+            list.getFirst();
+            Assert.fail("Expected NoSuchElementException");
+        } catch (NoSuchElementException expected) {}
+
+        try {
+            list.addFirst(null);
+            Assert.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {}
 
         list.addFirst("Night Market");
-        assertEquals(1, list.size());
-        assertEquals("Night Market", list.removeFirst());
-        assertTrue(list.isEmpty());
+        Assert.assertEquals(1, list.size());
+        Assert.assertEquals("Night Market", list.removeFirst());
+        Assert.assertTrue(list.isEmpty());
     }
 
-    
+    // --- Queue Edge Cases ---
     @Test
-    void testQueueEdgeCases() {
+    public void testQueueEdgeCases() {
         Queue<String> queue = new Queue<>();
-        assertThrows(NoSuchElementException.class, queue::dequeue);
-        assertThrows(NoSuchElementException.class, queue::peek);
-        assertThrows(IllegalArgumentException.class, () -> queue.enqueue(null));
+
+        try {
+            queue.dequeue();
+            Assert.fail("Expected NoSuchElementException");
+        } catch (NoSuchElementException expected) {}
+
+        try {
+            queue.peek();
+            Assert.fail("Expected NoSuchElementException");
+        } catch (NoSuchElementException expected) {}
+
+        try {
+            queue.enqueue(null);
+            Assert.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {}
 
         queue.enqueue("Req-001");
-        assertEquals("Req-001", queue.peek());
-        assertEquals("Req-001", queue.dequeue());
-        assertTrue(queue.isEmpty());
+        Assert.assertEquals("Req-001", queue.peek());
+        Assert.assertEquals("Req-001", queue.dequeue());
+        Assert.assertTrue(queue.isEmpty());
     }
 
-    
+    // --- CircularQueue Edge Cases ---
     @Test
-    void testCircularQueueEdgeCasesAndWrapAround() {
-        assertThrows(IllegalArgumentException.class, () -> new CircularQueue<String>(0));
+    public void testCircularQueueEdgeCasesAndWrapAround() {
+        try {
+            new CircularQueue<String>(0);
+            Assert.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {}
         
         CircularQueue<String> cq = new CircularQueue<>(3);
-        assertThrows(NoSuchElementException.class, cq::dequeue);
-        assertThrows(IllegalArgumentException.class, () -> cq.enqueue(null));
 
-        assertTrue(cq.enqueue("A"));
-        assertTrue(cq.enqueue("B"));
-        assertTrue(cq.enqueue("C"));
-        assertTrue(cq.isFull());
-        assertFalse(cq.enqueue("D")); // Full capacity
+        try {
+            cq.dequeue();
+            Assert.fail("Expected NoSuchElementException");
+        } catch (NoSuchElementException expected) {}
 
-        assertEquals("A", cq.dequeue()); // Head wraps
-        assertTrue(cq.enqueue("D"));
-        assertEquals("B", cq.dequeue());
-        assertEquals("C", cq.dequeue());
-        assertEquals("D", cq.dequeue());
-        assertTrue(cq.isEmpty());
+        try {
+            cq.enqueue(null);
+            Assert.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {}
+
+        Assert.assertTrue(cq.enqueue("A"));
+        Assert.assertTrue(cq.enqueue("B"));
+        Assert.assertTrue(cq.enqueue("C"));
+        Assert.assertTrue(cq.isFull());
+        Assert.assertFalse(cq.enqueue("D")); // Full capacity
+
+        Assert.assertEquals("A", cq.dequeue()); // Head wraps
+        Assert.assertTrue(cq.enqueue("D"));
+        Assert.assertEquals("B", cq.dequeue());
+        Assert.assertEquals("C", cq.dequeue());
+        Assert.assertEquals("D", cq.dequeue());
+        Assert.assertTrue(cq.isEmpty());
     }
 
-    
+    // --- Deque Edge Cases ---
     @Test
-    void testDequeEdgeCases() {
+    public void testDequeEdgeCases() {
         Deque<Integer> deque = new Deque<>();
-        assertThrows(NoSuchElementException.class, deque::removeFirst);
-        assertThrows(NoSuchElementException.class, deque::removeLast);
-        assertThrows(IllegalArgumentException.class, () -> deque.addFirst(null));
+
+        try {
+            deque.removeFirst();
+            Assert.fail("Expected NoSuchElementException");
+        } catch (NoSuchElementException expected) {}
+
+        try {
+            deque.removeLast();
+            Assert.fail("Expected NoSuchElementException");
+        } catch (NoSuchElementException expected) {}
+
+        try {
+            deque.addFirst(null);
+            Assert.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {}
 
         deque.addFirst(10);
-        assertEquals(1, deque.size());
-        assertEquals(10, deque.removeLast());
-        assertTrue(deque.isEmpty());
-        assertThrows(NoSuchElementException.class, deque::peekFirst);
+        Assert.assertEquals(1, deque.size());
+        Assert.assertEquals(Integer.valueOf(10), deque.removeLast());
+        Assert.assertTrue(deque.isEmpty());
+
+        try {
+            deque.peekFirst();
+            Assert.fail("Expected NoSuchElementException");
+        } catch (NoSuchElementException expected) {}
     }
 }
