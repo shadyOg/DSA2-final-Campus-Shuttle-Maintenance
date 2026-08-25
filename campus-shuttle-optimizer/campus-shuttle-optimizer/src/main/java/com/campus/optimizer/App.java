@@ -1,5 +1,7 @@
 package com.campus.optimizer;
 
+import com.campus.optimizer.db.DatabaseLoader;
+import com.campus.optimizer.graph.CampusGraphLoader;
 import com.campus.optimizer.graph.Graph;
 import com.campus.optimizer.graph.Kruskal;
 import com.campus.optimizer.graph.Prim;
@@ -13,6 +15,7 @@ import com.campus.optimizer.structures.MinHeap;
 import com.campus.optimizer.structures.Stack;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -45,15 +48,20 @@ public class App {
     }
 
     private static void demonstrateGraphAlgorithms() {
-        Graph graph = new Graph();
-        graph.addEdge("Main Gate", "Balme Library", 2.0);
-        graph.addEdge("Balme Library", "Science Block", 1.5);
-        graph.addEdge("Main Gate", "Science Block", 4.0);
-        graph.addEdge("Science Block", "Maintenance Depot", 2.5);
+        DatabaseLoader.initDatabase();
+        Graph graph = CampusGraphLoader.loadFromDatabase();
 
-        System.out.println("BFS: " + graph.bfs("Main Gate"));
-        System.out.println("DFS: " + graph.dfs("Main Gate"));
-        System.out.println("Dijkstra: " + graph.dijkstra("Main Gate"));
+        List<String> vertices = graph.getVertices();
+        if (vertices.isEmpty()) {
+            System.out.println("Graph: no locations found in the database.");
+            return;
+        }
+        String start = vertices.get(0);
+
+        System.out.println("Graph: " + graph.getNodeCount() + " locations loaded from the database.");
+        System.out.println("BFS from " + start + ": " + graph.bfs(start));
+        System.out.println("DFS from " + start + ": " + graph.dfs(start));
+        System.out.println("Dijkstra from " + start + ": " + graph.dijkstra(start));
         System.out.println("Prim weight: " + Prim.totalWeight(graph));
         System.out.println("Kruskal weight: " + Kruskal.totalWeight(graph));
     }
