@@ -1,15 +1,19 @@
 package com.campus.optimizer.db;
 
 import com.campus.optimizer.model.AuditEvent;
+import com.campus.optimizer.structures.Stack;
 import java.sql.*;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AuditEventDAO {
     private final DatabaseConnection db;
+    private final Stack<AuditEvent> liveAuditStack;
 
     public AuditEventDAO() {
         this.db = DatabaseConnection.getInstance();
+        this.liveAuditStack = new Stack<>();
     }
 
     public void insert(AuditEvent event) {
@@ -25,9 +29,30 @@ public class AuditEventDAO {
                     event.setEventId(rs.getInt(1));
                 }
             }
+            liveAuditStack.push(event);
         } catch (SQLException e) {
             throw new RuntimeException("Failed to insert audit event", e);
         }
+    }
+
+    public AuditEvent peekLive() {
+        return liveAuditStack.peek();
+    }
+
+    public AuditEvent undoLast() {
+        AuditEvent undoneEvent = liveAuditStack.peek();
+        AuditEvent undoEvent = new AuditEvent(
+                0,
+                "UNDO",
+                "Undid action: " + undoneEvent.getAction() + " - " + undoneEvent.getDetails(),
+                Instant.now().toString());
+        insertWithoutTracking(undoEvent);
+        liveAuditStack.pop();
+        return undoneEvent;
+    }
+
+    public int liveAuditCount() {
+        return liveAuditStack.size();
     }
 
     public List<AuditEvent> findAll() {
@@ -77,6 +102,24 @@ public class AuditEventDAO {
             throw new RuntimeException("Failed to fetch audit events by action", e);
         }
         return events;
+    }
+
+    private void insertWithoutTracking(AuditEvent event) {
+        String sql = "INSERT INTO audit_events (action, details, timestamp) VALUES (?, ?, ?)";
+        try (Connection conn = db.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            stmt.setString(1, event.getAction());
+            stmt.setString(2, event.getDetails());
+            stmt.setString(3, event.getTimestamp());
+            stmt.executeUpdate();
+            try (ResultSet rs = stmt.getGeneratedKeys()) {
+                if (rs.next()) {
+                    event.setEventId(rs.getInt(1));
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Failed to insert undo audit event", e);
+        }
     }
 
     private AuditEvent mapRow(ResultSet rs) throws SQLException {
