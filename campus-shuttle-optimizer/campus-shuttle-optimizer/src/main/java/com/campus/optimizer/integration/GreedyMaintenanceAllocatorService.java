@@ -1,10 +1,8 @@
 package com.campus.optimizer.integration;
 
 import com.campus.optimizer.db.ServiceRequestDAO;
-import com.campus.optimizer.model.ServiceRequest as DatabaseServiceRequest;
 import com.campus.optimizer.optimization.GreedyMaintenanceAllocator;
 import com.campus.optimizer.optimization.OptimizationResult;
-import com.campus.optimizer.optimization.ServiceRequest as OptimizationServiceRequest;
 
 import java.util.ArrayList;
 import java.util.List;
