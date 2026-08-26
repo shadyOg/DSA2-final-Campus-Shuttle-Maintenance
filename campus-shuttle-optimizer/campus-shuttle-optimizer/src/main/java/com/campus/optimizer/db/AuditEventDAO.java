@@ -13,12 +13,17 @@ public class AuditEventDAO {
     }
 
     public void insert(AuditEvent event) {
-        String sql = "INSERT INTO audit_events (action, details, timestamp) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO audit_events (eventId, action, details, timestamp) VALUES (?, ?, ?, ?)";
         try (Connection conn = db.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setString(1, event.getAction());
-            stmt.setString(2, event.getDetails());
-            stmt.setString(3, event.getTimestamp());
+            if (event.getEventId() > 0) {
+                stmt.setInt(1, event.getEventId());
+            } else {
+                stmt.setNull(1, Types.INTEGER);
+            }
+            stmt.setString(2, event.getAction());
+            stmt.setString(3, event.getDetails());
+            stmt.setString(4, event.getTimestamp());
             stmt.executeUpdate();
             try (ResultSet rs = stmt.getGeneratedKeys()) {
                 if (rs.next()) {

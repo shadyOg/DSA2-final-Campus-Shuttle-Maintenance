@@ -14,16 +14,21 @@ public class ServiceRequestDAO {
     }
 
     public void insert(ServiceRequest request) {
-        String sql = "INSERT INTO service_requests (source, destination, category, urgency, timeSubmitted, deadline, status) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO service_requests (requestId, source, destination, category, urgency, timeSubmitted, deadline, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = db.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setString(1, request.getSource());
-            stmt.setString(2, request.getDestination());
-            stmt.setString(3, request.getCategory());
-            stmt.setInt(4, request.getUrgency());
-            stmt.setString(5, request.getTimeSubmitted());
-            stmt.setString(6, request.getDeadline());
-            stmt.setString(7, request.getStatus());
+            if (request.getRequestId() > 0) {
+                stmt.setInt(1, request.getRequestId());
+            } else {
+                stmt.setNull(1, Types.INTEGER);
+            }
+            stmt.setString(2, request.getSource());
+            stmt.setString(3, request.getDestination());
+            stmt.setString(4, request.getCategory());
+            stmt.setInt(5, request.getUrgency());
+            stmt.setString(6, request.getTimeSubmitted());
+            stmt.setString(7, request.getDeadline());
+            stmt.setString(8, request.getStatus());
             stmt.executeUpdate();
             try (ResultSet rs = stmt.getGeneratedKeys()) {
                 if (rs.next()) {

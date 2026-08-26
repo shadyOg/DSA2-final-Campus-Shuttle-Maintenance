@@ -14,13 +14,18 @@ public class ResourceDAO {
     }
 
     public void insert(Resource resource) {
-        String sql = "INSERT INTO resources (type, homeLocation, capacity, availabilityStatus) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO resources (resourceId, type, homeLocation, capacity, availabilityStatus) VALUES (?, ?, ?, ?, ?)";
         try (Connection conn = db.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setString(1, resource.getType());
-            stmt.setString(2, resource.getHomeLocation());
-            stmt.setInt(3, resource.getCapacity());
-            stmt.setString(4, resource.getAvailabilityStatus());
+            if (resource.getResourceId() > 0) {
+                stmt.setInt(1, resource.getResourceId());
+            } else {
+                stmt.setNull(1, Types.INTEGER);
+            }
+            stmt.setString(2, resource.getType());
+            stmt.setString(3, resource.getHomeLocation());
+            stmt.setInt(4, resource.getCapacity());
+            stmt.setString(5, resource.getAvailabilityStatus());
             stmt.executeUpdate();
             try (ResultSet rs = stmt.getGeneratedKeys()) {
                 if (rs.next()) {

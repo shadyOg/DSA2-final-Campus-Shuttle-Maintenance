@@ -14,14 +14,19 @@ public class LocationDAO {
     }
 
     public void insert(Location location) {
-        String sql = "INSERT INTO locations (name, area, type, latitude, longitude) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO locations (locationId, name, area, type, latitude, longitude) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = db.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setString(1, location.getName());
-            stmt.setString(2, location.getArea());
-            stmt.setString(3, location.getType());
-            stmt.setDouble(4, location.getLatitude());
-            stmt.setDouble(5, location.getLongitude());
+            if (location.getLocationId() > 0) {
+                stmt.setInt(1, location.getLocationId());
+            } else {
+                stmt.setNull(1, Types.INTEGER);
+            }
+            stmt.setString(2, location.getName());
+            stmt.setString(3, location.getArea());
+            stmt.setString(4, location.getType());
+            stmt.setDouble(5, location.getLatitude());
+            stmt.setDouble(6, location.getLongitude());
             stmt.executeUpdate();
             try (ResultSet rs = stmt.getGeneratedKeys()) {
                 if (rs.next()) {

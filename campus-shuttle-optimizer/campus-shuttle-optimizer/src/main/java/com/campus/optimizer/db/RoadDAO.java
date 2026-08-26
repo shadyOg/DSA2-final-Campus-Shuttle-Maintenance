@@ -14,14 +14,19 @@ public class RoadDAO {
     }
 
     public void insert(Road road) {
-        String sql = "INSERT INTO roads (fromLocationId, toLocationId, distance, travelTime, roadConditionWeight) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO roads (roadId, fromLocationId, toLocationId, distance, travelTime, roadConditionWeight) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = db.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setInt(1, road.getFromLocationId());
-            stmt.setInt(2, road.getToLocationId());
-            stmt.setDouble(3, road.getDistance());
-            stmt.setDouble(4, road.getTravelTime());
-            stmt.setDouble(5, road.getRoadConditionWeight());
+            if (road.getRoadId() > 0) {
+                stmt.setInt(1, road.getRoadId());
+            } else {
+                stmt.setNull(1, Types.INTEGER);
+            }
+            stmt.setInt(2, road.getFromLocationId());
+            stmt.setInt(3, road.getToLocationId());
+            stmt.setDouble(4, road.getDistance());
+            stmt.setDouble(5, road.getTravelTime());
+            stmt.setDouble(6, road.getRoadConditionWeight());
             stmt.executeUpdate();
             try (ResultSet rs = stmt.getGeneratedKeys()) {
                 if (rs.next()) {

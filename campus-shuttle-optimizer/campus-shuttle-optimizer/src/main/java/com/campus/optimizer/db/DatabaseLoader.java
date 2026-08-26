@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -19,10 +20,107 @@ import java.util.List;
 
 public class DatabaseLoader {
 
+    /**
+     * Prepares the database for use: creates the schema if needed, seeds it from the
+     * bundled CSVs on a first run, and skips reseeding on every subsequent run so the
+     * same jar/IDE run configuration can be re-executed on any machine without piling
+     * up duplicate rows or crashing on unique-key conflicts.
+     */
     public static void initDatabase() {
         DatabaseConnection db = DatabaseConnection.getInstance();
         db.initializeDatabase();
-        loadAllData();
+        System.out.println("Using database: " + db.getDbFile());
+
+        if (isSeeded()) {
+            System.out.println("Database already contains data - skipping seed load.");
+        } else {
+            loadAllData();
+        }
+
+        verifySchemaIntegrity();
+    }
+
+    /** True if the database already has location rows, i.e. a previous run seeded it. */
+    private static boolean isSeeded() {
+        String sql = "SELECT COUNT(*) FROM locations";
+        try (Connection conn = DatabaseConnection.getInstance().getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            return rs.next() && rs.getInt(1) > 0;
+        } catch (SQLException e) {
+            throw new RuntimeException("Failed to check whether the database is already seeded", e);
+        }
+    }
+
+    /**
+     * Checks the seeded database end-to-end: every table has rows, and every
+     * name/id reference between tables (roads -&gt; locations, resources -&gt;
+     * locations, service_requests -&gt; locations) actually resolves. Nothing here
+     * is enforced by a FOREIGN KEY constraint at the schema level, so this is the
+     * only thing standing between a bad CSV edit and a silently broken dataset.
+     */
+    public static boolean verifySchemaIntegrity() {
+        List<String> issues = new ArrayList<>();
+        String[] tables = {
+                "locations", "roads", "service_requests",
+                "resources", "algorithm_runs", "audit_events"
+        };
+
+        try (Connection conn = DatabaseConnection.getInstance().getConnection();
+             Statement stmt = conn.createStatement()) {
+
+            for (String table : tables) {
+                try (ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM " + table)) {
+                    rs.next();
+                    if (rs.getInt(1) == 0) {
+                        issues.add("Table '" + table + "' is empty.");
+                    }
+                }
+            }
+
+            issues.addAll(countIssue(stmt,
+                    "SELECT COUNT(*) FROM roads r WHERE "
+                            + "NOT EXISTS (SELECT 1 FROM locations l WHERE l.locationId = r.fromLocationId) "
+                            + "OR NOT EXISTS (SELECT 1 FROM locations l WHERE l.locationId = r.toLocationId)",
+                    "road(s) reference a locationId that does not exist"));
+
+            issues.addAll(countIssue(stmt,
+                    "SELECT COUNT(*) FROM resources res WHERE "
+                            + "NOT EXISTS (SELECT 1 FROM locations l WHERE l.name = res.homeLocation)",
+                    "resource(s) reference a homeLocation that does not exist"));
+
+            issues.addAll(countIssue(stmt,
+                    "SELECT COUNT(*) FROM service_requests sr WHERE "
+                            + "NOT EXISTS (SELECT 1 FROM locations l WHERE l.name = sr.source) "
+                            + "OR NOT EXISTS (SELECT 1 FROM locations l WHERE l.name = sr.destination)",
+                    "service request(s) reference a source/destination that does not exist"));
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Failed to verify schema integrity", e);
+        }
+
+        if (issues.isEmpty()) {
+            System.out.println("Schema integrity check passed: all tables populated, all references resolve.");
+            return true;
+        }
+
+        System.err.println("Schema integrity check found " + issues.size() + " issue(s):");
+        for (String issue : issues) {
+            System.err.println("  - " + issue);
+        }
+        return false;
+    }
+
+    private static List<String> countIssue(Statement stmt, String sql, String message) throws SQLException {
+        List<String> issues = new ArrayList<>();
+        try (ResultSet rs = stmt.executeQuery(sql)) {
+            rs.next();
+            int count = rs.getInt(1);
+            if (count > 0) {
+                issues.add(count + " " + message + ".");
+            }
+        }
+        return issues;
     }
 
     private static void loadAllData() {
@@ -187,6 +285,8 @@ public class DatabaseLoader {
                         T obj = mapper.mapRow(row);
                         if (obj != null) {
                             result.add(obj);
+                        } else {
+                            System.err.println("Skipping malformed row in " + resourcePath + ": " + line);
                         }
                     }
                 }
