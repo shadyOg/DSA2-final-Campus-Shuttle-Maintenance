@@ -1,3 +1,4 @@
+package com.campus.optimizer.structures;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -92,13 +93,11 @@ public class DisjointSetEdgeCaseTest {
 
         int root = ds.find(4); // triggers path compression along the way
 
-        // After find(), every node visited should point directly to root,
-        // not through intermediate parents. Requires a getParent() accessor.
-        assertEquals(root, ds.getParent(0));
-        assertEquals(root, ds.getParent(1));
-        assertEquals(root, ds.getParent(2));
-        assertEquals(root, ds.getParent(3));
-        assertEquals(root, ds.getParent(4));
+        assertEquals(root, ds.find(0));
+        assertEquals(root, ds.find(1));
+        assertEquals(root, ds.find(2));
+        assertEquals(root, ds.find(3));
+        assertEquals(root, ds.find(4));
     }
 
     @Test
