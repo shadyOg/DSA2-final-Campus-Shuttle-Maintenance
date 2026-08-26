@@ -13,7 +13,7 @@ public class CustomMap<K, V> {
 
     public V getOrDefault(K key, V defaultValue) {
         V value = entries.get(key);
-        return value == null ? defaultValue : value;
+        return entries.containsKey(key) ? value : defaultValue;
     }
 
     public V remove(K key) {

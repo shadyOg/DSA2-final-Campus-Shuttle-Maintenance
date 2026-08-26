@@ -32,6 +32,16 @@ public class LinearStructuresTest {
         Assert.assertEquals(1, list.size());
         Assert.assertEquals("Night Market", list.removeFirst());
         Assert.assertTrue(list.isEmpty());
+
+        list.addLast("Library");
+        list.addFirst("Main Gate");
+        Assert.assertEquals("Main Gate", list.getFirst());
+        Assert.assertEquals("Library", list.getLast());
+        Assert.assertEquals(2, list.size());
+        list.clear();
+        Assert.assertTrue(list.isEmpty());
+        list.addLast("Reused");
+        Assert.assertEquals("Reused", list.removeFirst());
     }
 
     
@@ -58,6 +68,15 @@ public class LinearStructuresTest {
         Assert.assertEquals("Req-001", queue.peek());
         Assert.assertEquals("Req-001", queue.dequeue());
         Assert.assertTrue(queue.isEmpty());
+
+        queue.enqueue("Req-002");
+        queue.enqueue("Req-003");
+        Assert.assertEquals("Req-002", queue.dequeue());
+        Assert.assertEquals("Req-003", queue.peek());
+        queue.clear();
+        Assert.assertTrue(queue.isEmpty());
+        queue.enqueue("Req-004");
+        Assert.assertEquals("Req-004", queue.dequeue());
     }
 
     
@@ -65,6 +84,11 @@ public class LinearStructuresTest {
     public void testCircularQueueEdgeCasesAndWrapAround() {
         try {
             new CircularQueue<String>(0);
+            Assert.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {}
+
+        try {
+            new CircularQueue<String>(-1);
             Assert.fail("Expected IllegalArgumentException");
         } catch (IllegalArgumentException expected) {}
         
@@ -92,6 +116,16 @@ public class LinearStructuresTest {
         Assert.assertEquals("C", cq.dequeue());
         Assert.assertEquals("D", cq.dequeue());
         Assert.assertTrue(cq.isEmpty());
+
+        cq.enqueue("E");
+        cq.enqueue("F");
+        cq.clear();
+        Assert.assertEquals(0, cq.size());
+        Assert.assertFalse(cq.isFull());
+        Assert.assertTrue(cq.isEmpty());
+        Assert.assertTrue(cq.enqueue("G"));
+        Assert.assertEquals("G", cq.peek());
+        Assert.assertEquals("G", cq.dequeue());
     }
 
     
@@ -123,5 +157,28 @@ public class LinearStructuresTest {
             deque.peekFirst();
             Assert.fail("Expected NoSuchElementException");
         } catch (NoSuchElementException expected) {}
+
+        deque.addLast(20);
+        try {
+            deque.addLast(null);
+            Assert.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {}
+        deque.addFirst(10);
+        deque.addLast(30);
+        Assert.assertEquals(Integer.valueOf(10), deque.peekFirst());
+        Assert.assertEquals(Integer.valueOf(30), deque.peekLast());
+        Assert.assertEquals(Integer.valueOf(10), deque.removeFirst());
+        Assert.assertEquals(Integer.valueOf(30), deque.removeLast());
+        Assert.assertEquals(Integer.valueOf(20), deque.removeFirst());
+        Assert.assertTrue(deque.isEmpty());
+
+        deque.addFirst(40);
+        deque.addLast(50);
+        deque.clear();
+        Assert.assertTrue(deque.isEmpty());
+        Assert.assertEquals(0, deque.size());
+        deque.addLast(60);
+        Assert.assertEquals(Integer.valueOf(60), deque.peekFirst());
+        Assert.assertEquals(Integer.valueOf(60), deque.peekLast());
     }
 }

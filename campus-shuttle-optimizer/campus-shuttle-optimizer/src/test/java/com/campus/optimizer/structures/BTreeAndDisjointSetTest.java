@@ -5,11 +5,39 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.junit.Test;
 
 public class BTreeAndDisjointSetTest {
+
+    @Test
+    public void bTreeHandlesInvalidDegreeEmptyStateAndClearReuse() {
+        try {
+            new BTree<Integer>(1);
+            org.junit.Assert.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {
+            // expected
+        }
+
+        BTree<Integer> tree = new BTree<>();
+        assertTrue(tree.isEmpty());
+        assertEquals(Collections.emptyList(), tree.traverse());
+        assertFalse(tree.contains(null));
+        assertFalse(tree.remove(null));
+        assertTrue(tree.insert(5));
+        assertTrue(tree.remove(5));
+        tree.clear();
+        assertTrue(tree.isEmpty());
+        assertTrue(tree.insert(6));
+        assertEquals(Collections.singletonList(6), tree.traverse());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void bTreeRejectsNullInsertions() {
+        new BTree<Integer>().insert(null);
+    }
 
     @Test
     public void bTreeSplitsNodesAndReturnsSortedTraversal() {
@@ -53,6 +81,29 @@ public class BTreeAndDisjointSetTest {
         assertFalse(set.connected(0, 3));
         assertEquals(4, set.componentCount());
         assertEquals(set.find(0), set.find(2));
+    }
+
+    @Test
+    public void disjointSetHandlesSingletonRepeatedUnionAndBounds() {
+        DisjointSet set = new DisjointSet(1);
+        assertEquals(1, set.size());
+        assertEquals(1, set.componentCount());
+        assertTrue(set.connected(0, 0));
+        assertFalse(set.union(0, 0));
+        assertEquals(1, set.componentCount());
+
+        try {
+            new DisjointSet(-1);
+            org.junit.Assert.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {
+            // expected
+        }
+        try {
+            set.find(1);
+            org.junit.Assert.fail("Expected IndexOutOfBoundsException");
+        } catch (IndexOutOfBoundsException expected) {
+            // expected
+        }
     }
 
     private List<Integer> expectedRange(int start, int end) {
