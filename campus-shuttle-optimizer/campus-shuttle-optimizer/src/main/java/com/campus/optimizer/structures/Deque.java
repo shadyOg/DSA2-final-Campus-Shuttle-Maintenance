@@ -7,10 +7,7 @@ public class Deque<T> {
         T data;
         Node<T> prev;
         Node<T> next;
-
-        Node(T data) {
-            this.data = data;
-        }
+        Node(T data) { this.data = data; }
     }
 
     private Node<T> head;
@@ -18,6 +15,7 @@ public class Deque<T> {
     private int size = 0;
 
     public void addFirst(T item) {
+        if (item == null) throw new IllegalArgumentException("Null elements not permitted");
         Node<T> newNode = new Node<>(item);
         if (isEmpty()) {
             head = tail = newNode;
@@ -30,6 +28,7 @@ public class Deque<T> {
     }
 
     public void addLast(T item) {
+        if (item == null) throw new IllegalArgumentException("Null elements not permitted");
         Node<T> newNode = new Node<>(item);
         if (isEmpty()) {
             head = tail = newNode;
@@ -42,7 +41,7 @@ public class Deque<T> {
     }
 
     public T removeFirst() {
-        if (isEmpty()) throw new NoSuchElementException("Deque is empty");
+        if (isEmpty()) throw new NoSuchElementException("Deque underflow: empty front");
         T data = head.data;
         head = head.next;
         if (head != null) {
@@ -55,7 +54,7 @@ public class Deque<T> {
     }
 
     public T removeLast() {
-        if (isEmpty()) throw new NoSuchElementException("Deque is empty");
+        if (isEmpty()) throw new NoSuchElementException("Deque underflow: empty rear");
         T data = tail.data;
         tail = tail.prev;
         if (tail != null) {
@@ -67,11 +66,21 @@ public class Deque<T> {
         return data;
     }
 
-    public boolean isEmpty() {
-        return size == 0;
+    public T peekFirst() {
+        if (isEmpty()) throw new NoSuchElementException("Deque is empty");
+        return head.data;
     }
 
-    public int size() {
-        return size;
+    public T peekLast() {
+        if (isEmpty()) throw new NoSuchElementException("Deque is empty");
+        return tail.data;
     }
+
+    public void clear() {
+        head = tail = null;
+        size = 0;
+    }
+
+    public boolean isEmpty() { return size == 0; }
+    public int size() { return size; }
 }

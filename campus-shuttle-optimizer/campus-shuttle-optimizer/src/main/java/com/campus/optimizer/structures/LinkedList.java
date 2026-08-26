@@ -6,10 +6,7 @@ public class LinkedList<T> {
     private static class Node<T> {
         T data;
         Node<T> next;
-
-        Node(T data) {
-            this.data = data;
-        }
+        Node(T data) { this.data = data; }
     }
 
     private Node<T> head;
@@ -23,6 +20,7 @@ public class LinkedList<T> {
     }
 
     public void addFirst(T item) {
+        if (item == null) throw new IllegalArgumentException("Cannot insert null element");
         Node<T> newNode = new Node<>(item);
         if (isEmpty()) {
             head = tail = newNode;
@@ -34,6 +32,7 @@ public class LinkedList<T> {
     }
 
     public void addLast(T item) {
+        if (item == null) throw new IllegalArgumentException("Cannot insert null element");
         Node<T> newNode = new Node<>(item);
         if (isEmpty()) {
             head = tail = newNode;
@@ -45,9 +44,7 @@ public class LinkedList<T> {
     }
 
     public T removeFirst() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("List is empty");
-        }
+        if (isEmpty()) throw new NoSuchElementException("Cannot remove from empty LinkedList");
         T data = head.data;
         head = head.next;
         size--;
@@ -58,20 +55,20 @@ public class LinkedList<T> {
     }
 
     public T getFirst() {
-        if (isEmpty()) throw new NoSuchElementException("List is empty");
+        if (isEmpty()) throw new NoSuchElementException("LinkedList is empty");
         return head.data;
     }
 
     public T getLast() {
-        if (isEmpty()) throw new NoSuchElementException("List is empty");
+        if (isEmpty()) throw new NoSuchElementException("LinkedList is empty");
         return tail.data;
     }
 
-    public int size() {
-        return size;
+    public void clear() {
+        head = tail = null;
+        size = 0;
     }
 
-    public boolean isEmpty() {
-        return size == 0;
-    }
+    public int size() { return size; }
+    public boolean isEmpty() { return size == 0; }
 }
