@@ -12,6 +12,47 @@ import org.junit.Test;
 public class RedBlackTreeAndHashTableTest {
 
     @Test
+    public void hashTableRejectsInvalidCapacityAndNullKeys() {
+        try {
+            new HashTable<String, Integer>(0);
+            org.junit.Assert.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {
+            // expected
+        }
+
+        HashTable<String, Integer> table = new HashTable<>();
+        try {
+            table.put(null, 1);
+            org.junit.Assert.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {
+            // expected
+        }
+        try {
+            table.get(null);
+            org.junit.Assert.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException expected) {
+            // expected
+        }
+    }
+
+    @Test
+    public void hashTableClearPreservesCapacityAndAllowsReuse() {
+        HashTable<Integer, String> table = new HashTable<>(5);
+        table.put(1, "one");
+        table.put(2, "two");
+        int capacity = table.capacity();
+
+        table.clear();
+
+        assertTrue(table.isEmpty());
+        assertEquals(0, table.size());
+        assertEquals(capacity, table.capacity());
+        assertTrue(table.keys().isEmpty());
+        assertEquals(null, table.put(3, "three"));
+        assertEquals("three", table.get(3));
+    }
+
+    @Test
     public void redBlackTreeMaintainsOrderingAndBalanceAfterInsertions() {
         RedBlackTree<Integer> tree = new RedBlackTree<>();
         for (int value : new int[] {10, 20, 30, 15, 5, 1, 7, 25, 40, 50}) {
