@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Campus Operations Desk</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="shell">
+    <header class="topbar">
+        <div><p class="eyebrow">Campus operations</p><h1>Operations desk</h1></div>
+        <span class="connection"><i></i> Local system</span>
+    </header>
+    <section class="intro"><p>Plan routes, monitor resources, and make better maintenance decisions.</p></section>
+    <section class="stats">
+        <div><span>Locations</span><strong id="location-count">--</strong></div>
+        <div><span>Pending requests</span><strong id="request-count">--</strong></div>
+        <div><span>Available resources</span><strong id="resource-count">--</strong></div>
+        <div><span>Network status</span><strong class="healthy">Ready</strong></div>
+    </section>
+    <div class="layout">
+        <section class="panel route-panel">
+            <div class="panel-heading"><div><p class="eyebrow">01 / Routing</p><h2>Plan a journey</h2></div><span class="status" id="status">Ready</span></div>
+            <form id="route-form">
+                <label>From<select id="from" required><option value="">Choose location</option></select></label>
+                <label>To<select id="to" required><option value="">Choose location</option></select></label>
+                <button type="submit">Find route <span>-></span></button>
+            </form>
+            <div class="result" id="result" aria-live="polite"><span class="result-label">Select two locations to calculate a route.</span></div>
+        </section>
+        <section class="panel data-panel"><div class="panel-heading"><div><p class="eyebrow">02 / Network</p><h2>Campus locations</h2></div><button class="quiet" id="refresh-data">Refresh</button></div><div class="table-wrap"><table><thead><tr><th>Name</th><th>Role</th></tr></thead><tbody id="locations-table"></tbody></table></div></section>
+        <section class="panel data-panel"><div class="panel-heading"><div><p class="eyebrow">03 / Workload</p><h2>Pending requests</h2></div></div><div class="table-wrap"><table><thead><tr><th>Request</th><th>Category</th><th>Urgency</th></tr></thead><tbody id="requests-table"></tbody></table></div></section>
+        <section class="panel data-panel"><div class="panel-heading"><div><p class="eyebrow">04 / Capacity</p><h2>Available resources</h2></div></div><div class="table-wrap"><table><thead><tr><th>Type</th><th>Home base</th><th>Capacity</th></tr></thead><tbody id="resources-table"></tbody></table></div></section>
+        <section class="panel action-panel"><div class="panel-heading"><div><p class="eyebrow">05 / Optimization</p><h2>Allocate the shift</h2></div></div><form id="optimize-form" class="inline-form"><label>Minutes<input id="capacity" type="number" min="1" value="120" required></label><button type="submit">Compare plans</button></form><div id="optimization-result" class="compact-result">Enter available working minutes.</div></section>
+        <section class="panel action-panel"><div class="panel-heading"><div><p class="eyebrow">06 / Network utility</p><h2>Spanning trees</h2></div><button class="quiet" id="load-mst">Calculate</button></div><div id="mst-result" class="compact-result">Compare Prim and Kruskal network weights.</div></section>
+        <section class="panel action-panel"><div class="panel-heading"><div><p class="eyebrow">07 / Performance</p><h2>Benchmark suite</h2></div><button class="quiet" id="run-benchmark">Run suite</button></div><div id="benchmark-result" class="compact-result">Six algorithms, four input sizes.</div></section>
+        <section class="panel action-panel"><div class="panel-heading"><div><p class="eyebrow">08 / Record</p><h2>Audit trail</h2></div><div class="button-row"><button class="quiet" id="load-audit">Refresh</button><button class="quiet" id="undo-audit">Undo</button></div></div><div id="audit-result" class="audit-list">No recent activity loaded.</div></section>
+    </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

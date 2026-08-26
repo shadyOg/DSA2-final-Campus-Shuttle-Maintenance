@@ -149,6 +149,10 @@ public class Graph {
         return Dijkstra.shortestPaths(this, startVertex);
     }
 
+    public RouteResult shortestRoute(String startVertex, String destinationVertex) {
+        return Dijkstra.shortestRoute(this, startVertex, destinationVertex);
+    }
+
     public void displayMatrix() {
         System.out.println("\nAdjacency matrix representation");
 
