@@ -12,7 +12,8 @@ import java.util.Map;
 /**
  * Builds a {@link Graph} from the real SQLite-backed campus data (locations + roads),
  * replacing the hardcoded demo graph used in Phase 1. Vertices are location names
- * (matching {@link Graph}'s String-keyed API); edge weight is road distance.
+ * (matching {@link Graph}'s String-keyed API); edge weight is distance adjusted
+ * by the road-condition penalty.
  */
 public final class GraphLoader {
 
@@ -43,7 +44,7 @@ public final class GraphLoader {
                         + " -> " + road.getToLocationId());
                 continue;
             }
-            graph.addEdge(from, to, road.getDistance());
+            graph.addEdge(from, to, road.getDistance() * road.getRoadConditionWeight());
         }
 
         return graph;

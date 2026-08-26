@@ -3,6 +3,10 @@ package com.campus.optimizer.optimization;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.campus.optimizer.db.DatabaseConnection;
+import com.campus.optimizer.db.DatabaseLoader;
+
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
@@ -38,5 +42,21 @@ public class CampusServiceOptimizerTest {
         assertEquals(0, result.getTotalBenefit());
         assertEquals(0, result.getSelectedRequestIds().size());
         assertEquals(0, result.getTotalDuration());
+    }
+
+    @Test
+    public void optimizePendingRequestsUsesDatabaseRowsAndMinuteCapacity() {
+        File databaseFile = new File("src/main/resources/campus.db");
+        if (databaseFile.exists()) {
+            assertTrue(databaseFile.delete());
+        }
+        DatabaseConnection.getInstance().initializeDatabase();
+        DatabaseLoader.loadServiceRequests();
+
+        OptimizationResult result = new CampusServiceOptimizer().optimizePendingRequests(120);
+
+        assertTrue(result.getSelectedRequestIds().size() > 0);
+        assertTrue(result.getTotalDuration() <= 120);
+        assertTrue(result.getTotalBenefit() > 0);
     }
 }

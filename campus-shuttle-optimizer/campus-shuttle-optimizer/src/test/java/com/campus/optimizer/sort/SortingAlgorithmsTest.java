@@ -7,6 +7,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import java.util.List;
+
 public class SortingAlgorithmsTest {
 
     @Test
@@ -47,5 +49,22 @@ public class SortingAlgorithmsTest {
         assertEquals(7, record.getInputSize());
         assertEquals(7, record.getSortedSize());
         assertTrue(record.getRuntimeNanos() >= 0L);
+    }
+
+    @Test
+    public void benchmarkHarnessRunsAllAlgorithmsForEachRequestedSize() {
+        List<BenchmarkRecord> records = BenchmarkHarness.runSuite(10, 100);
+
+        assertEquals(12, records.size());
+        for (BenchmarkRecord record : records) {
+            assertTrue(record.getInputSize() == 10 || record.getInputSize() == 100);
+            assertTrue(record.getRuntimeNanos() >= 0L);
+            assertTrue(record.getSortedSize() >= 0);
+        }
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void benchmarkHarnessRejectsNegativeInputSizes() {
+        BenchmarkHarness.runSuite(-1);
     }
 }
