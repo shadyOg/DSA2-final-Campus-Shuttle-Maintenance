@@ -30,10 +30,10 @@ public class GreedyMaintenanceAllocatorService {
      */
     public OptimizationResult allocateMaintenanceRequests(int capacity) {
         // Fetch all pending requests from the database
-        List<DatabaseServiceRequest> dbRequests = dao.findByStatus("pending");
+        List<com.campus.optimizer.model.ServiceRequest> dbRequests = dao.findByStatus("pending");
         
         // Convert database requests to optimization requests
-        List<OptimizationServiceRequest> optimizationRequests = convertToOptimizationRequests(dbRequests);
+        List<com.campus.optimizer.optimization.ServiceRequest> optimizationRequests = convertToOptimizationRequests(dbRequests);
         
         // Run the greedy allocation algorithm
         return allocator.allocate(optimizationRequests, capacity);
@@ -49,18 +49,18 @@ public class GreedyMaintenanceAllocatorService {
      */
     public OptimizationResult allocateMaintenanceRequestsByCategory(String category, int capacity) {
         // Fetch all pending requests from the database
-        List<DatabaseServiceRequest> dbRequests = dao.findByStatus("pending");
+        List<com.campus.optimizer.model.ServiceRequest> dbRequests = dao.findByStatus("pending");
         
         // Filter by category
-        List<DatabaseServiceRequest> filteredRequests = new ArrayList<>();
-        for (DatabaseServiceRequest request : dbRequests) {
+        List<com.campus.optimizer.model.ServiceRequest> filteredRequests = new ArrayList<>();
+        for (com.campus.optimizer.model.ServiceRequest request : dbRequests) {
             if (request.getCategory() != null && request.getCategory().equalsIgnoreCase(category)) {
                 filteredRequests.add(request);
             }
         }
         
         // Convert to optimization requests
-        List<OptimizationServiceRequest> optimizationRequests = convertToOptimizationRequests(filteredRequests);
+        List<com.campus.optimizer.optimization.ServiceRequest> optimizationRequests = convertToOptimizationRequests(filteredRequests);
         
         // Run the greedy allocation algorithm
         return allocator.allocate(optimizationRequests, capacity);
@@ -76,10 +76,10 @@ public class GreedyMaintenanceAllocatorService {
      */
     public OptimizationResult allocateMaintenanceRequestsByUrgency(int urgency, int capacity) {
         // Fetch requests by urgency from the database
-        List<DatabaseServiceRequest> dbRequests = dao.findByUrgency(urgency);
+        List<com.campus.optimizer.model.ServiceRequest> dbRequests = dao.findByUrgency(urgency);
         
         // Convert to optimization requests
-        List<OptimizationServiceRequest> optimizationRequests = convertToOptimizationRequests(dbRequests);
+        List<com.campus.optimizer.optimization.ServiceRequest> optimizationRequests = convertToOptimizationRequests(dbRequests);
         
         // Run the greedy allocation algorithm
         return allocator.allocate(optimizationRequests, capacity);
@@ -98,11 +98,11 @@ public class GreedyMaintenanceAllocatorService {
      * @param dbRequests list of database ServiceRequest objects
      * @return list of optimization ServiceRequest objects
      */
-    private List<OptimizationServiceRequest> convertToOptimizationRequests(
-            List<DatabaseServiceRequest> dbRequests) {
-        List<OptimizationServiceRequest> optimizationRequests = new ArrayList<>();
+    private List<com.campus.optimizer.optimization.ServiceRequest> convertToOptimizationRequests(
+            List<com.campus.optimizer.model.ServiceRequest> dbRequests) {
+        List<com.campus.optimizer.optimization.ServiceRequest> optimizationRequests = new ArrayList<>();
         
-        for (DatabaseServiceRequest dbRequest : dbRequests) {
+        for (com.campus.optimizer.model.ServiceRequest dbRequest : dbRequests) {
             if (dbRequest == null) continue;
             
             String id = "REQ-" + dbRequest.getRequestId();
@@ -116,7 +116,7 @@ public class GreedyMaintenanceAllocatorService {
             // Calculate benefit based on urgency (higher urgency = higher benefit)
             int benefit = dbRequest.getUrgency() * 10;
             
-            OptimizationServiceRequest optRequest = new OptimizationServiceRequest(
+            com.campus.optimizer.optimization.ServiceRequest optRequest = new com.campus.optimizer.optimization.ServiceRequest(
                     id, type, location, priority, duration, benefit
             );
             optimizationRequests.add(optRequest);
