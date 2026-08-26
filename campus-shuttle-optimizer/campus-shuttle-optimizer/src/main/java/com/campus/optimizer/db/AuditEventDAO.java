@@ -9,11 +9,10 @@ import java.util.List;
 
 public class AuditEventDAO {
     private final DatabaseConnection db;
-    private final Stack<AuditEvent> liveAuditStack;
+    private static final Stack<AuditEvent> liveAuditStack = new Stack<>();
 
     public AuditEventDAO() {
         this.db = DatabaseConnection.getInstance();
-        this.liveAuditStack = new Stack<>();
     }
 
     public void insert(AuditEvent event) {

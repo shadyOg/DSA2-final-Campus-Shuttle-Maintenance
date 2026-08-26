@@ -12,6 +12,7 @@ import com.campus.optimizer.graph.GraphLoader;
 import com.campus.optimizer.graph.Kruskal;
 import com.campus.optimizer.graph.MstEdge;
 import com.campus.optimizer.graph.Prim;
+import com.campus.optimizer.graph.RouteResult;
 import com.campus.optimizer.integration.GreedyMaintenanceAllocatorService;
 import com.campus.optimizer.model.AuditEvent;
 import com.campus.optimizer.model.Resource;
@@ -21,7 +22,6 @@ import com.campus.optimizer.optimization.OptimizationResult;
 import com.campus.optimizer.sort.BenchmarkHarness;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 public class App {
@@ -108,13 +108,13 @@ public class App {
         String source = scanner.nextLine().trim();
         System.out.print("Destination location: ");
         String destination = scanner.nextLine().trim();
-        Map<String, Double> distances = graph.dijkstra(source);
-        Double distance = distances.get(destination);
-        if (distance == null || distance.isInfinite()) {
+        RouteResult route = graph.shortestRoute(source, destination);
+        if (!route.isReachable()) {
             System.out.println("No route found between those locations.");
             return;
         }
-        System.out.println("Shortest penalized route distance: " + distance);
+        System.out.println("Route: " + String.join(" -> ", route.getPath()));
+        System.out.println("Shortest penalized route distance: " + route.getDistance());
     }
 
     private void showSpanningTrees() {
